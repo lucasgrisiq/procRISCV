@@ -1,0 +1,168 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/jcsf2/Desktop/hw
+vCodigo_fonte
+Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
+Z2 !s110 1568236216
+!i10b 1
+!s100 FGeF[DIWUI6@67ZR>k0e33
+IGgI?]0bh?Z<3ZOen_V:mF0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 Codigo_fonte_sv_unit
+S1
+R0
+Z4 w1568229328
+8Codigo_fonte.sv
+FCodigo_fonte.sv
+L0 1
+Z5 OV;L;10.6d;65
+r1
+!s85 0
+31
+Z6 !s108 1568236216.000000
+Z7 !s107 UP.sv|State_machine.sv|Simulation.sv|register.sv|Processador.sv|Codigo_fonte.sv|
+Z8 !s90 -reportprogress|300|-f|modulos|
+!i113 1
+Z9 tCvgOpt 0
+n@codigo_fonte
+vregister
+R1
+R2
+!i10b 1
+!s100 bYE8;I>5ooJ_Za^;]7VNI0
+I`1RNN7Ob]9_kWo]Kj_HUK0
+R3
+!s105 register_sv_unit
+S1
+R0
+R4
+8register.sv
+Fregister.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+vSimulation
+R1
+R2
+!i10b 1
+!s100 @k[6AoUBRAGkeNZKl9@S71
+I9T[B[iE3FCXdf]:TUJ8J03
+R3
+!s105 Simulation_sv_unit
+S1
+R0
+R4
+8Simulation.sv
+FSimulation.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@simulation
+vState_machine
+R1
+R2
+!i10b 1
+!s100 BZW?FDYSK7Sc>TKQ:QfW73
+IldH@i[8Gz4oMdL0`e>39@3
+R3
+!s105 State_machine_sv_unit
+S1
+R0
+R4
+8State_machine.sv
+FState_machine.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@state_machine
+Eula64
+R4
+Z10 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z12 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z13 8ula64.vhd
+Z14 Fula64.vhd
+l0
+L54
+VA[hKfbX3SC@81eT`QAGTa0
+!s100 gXP0QOjWED7GdgGCHP44]0
+Z15 OV;C;10.6d;65
+32
+R2
+!i10b 1
+R6
+Z16 !s90 -reportprogress|300|-f|ula|
+!s107 ula64.vhd|
+!i113 1
+Z17 tExplicit 1 CvgOpt 0
+Abehavioral
+R10
+R11
+R12
+DEx4 work 5 ula64 0 22 A[hKfbX3SC@81eT`QAGTa0
+l80
+L70
+VITWg]kaXHNgAHH8EBQEIM3
+!s100 DoJmkJ?1Y9Zk;7@A7oGLb2
+R15
+32
+R2
+!i10b 1
+R6
+R16
+Z18 !s107 ula64.vhd|
+!i113 1
+R17
+vUP
+R1
+R2
+!i10b 1
+!s100 Y4Xl[VGSFH]]UjOlYVQ`61
+I60XFj;aEkkC?U?F7<_XFd3
+R3
+!s105 UP_sv_unit
+S1
+R0
+R4
+8UP.sv
+FUP.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@u@p

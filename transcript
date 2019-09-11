@@ -1,0 +1,277 @@
+# Compile of UP.sv was successful.
+# Compile of Codigo_fonte.sv was successful.
+# Compile of Processador.sv was successful.
+# Compile of register.sv was successful.
+# Compile of Simulation.sv was successful.
+# Compile of State_machine.sv was successful.
+# Compile of ula64.vhd was successful.
+# Compile of UP.sv was successful.
+# 7 compiles, 0 failed with no errors.
+# Load canceled
+vsim -gui work.Simulation
+# vsim -gui work.Simulation 
+# Start time: 17:57:53 on Sep 11,2019
+# Loading sv_std.std
+# Loading work.Simulation
+# Loading work.UP
+# Loading work.register
+# Loading work.Codigo_fonte
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-8822) C:/Users/jcsf2/Desktop/processadorSVerilog-master/UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: C:/Users/jcsf2/Desktop/processadorSVerilog-master/ula64.vhd
+# ** Warning: (vsim-8822) C:/Users/jcsf2/Desktop/processadorSVerilog-master/UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: C:/Users/jcsf2/Desktop/processadorSVerilog-master/ula64.vhd
+# ** Warning: (vsim-8822) C:/Users/jcsf2/Desktop/processadorSVerilog-master/UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'z'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: C:/Users/jcsf2/Desktop/processadorSVerilog-master/ula64.vhd
+# ** Warning: (vsim-8822) C:/Users/jcsf2/Desktop/processadorSVerilog-master/UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Igual'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: C:/Users/jcsf2/Desktop/processadorSVerilog-master/ula64.vhd
+# ** Warning: (vsim-8822) C:/Users/jcsf2/Desktop/processadorSVerilog-master/UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: C:/Users/jcsf2/Desktop/processadorSVerilog-master/ula64.vhd
+# ** Warning: (vsim-8822) C:/Users/jcsf2/Desktop/processadorSVerilog-master/UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Menor'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: C:/Users/jcsf2/Desktop/processadorSVerilog-master/ula64.vhd
+add wave -position end  sim:/Simulation/processing/CLK
+add wave -position end  sim:/Simulation/processing/RST
+add wave -position end  sim:/Simulation/processing/WRT
+add wave -position end  sim:/Simulation/processing/RST_STATE_MACHINE
+add wave -position end  sim:/Simulation/processing/ENTRADA_DADO
+add wave -position end  sim:/Simulation/processing/SAIDA_DADO
+add wave -position end  sim:/Simulation/processing/A
+add wave -position end  sim:/Simulation/processing/B
+add wave -position end  sim:/Simulation/processing/SAIDA
+add wave -position end  sim:/Simulation/processing/SELETOR
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+vdel -all -lib work
+vlib work
+
+vlog -f Modulos_em_System_Verilog
+# ** Error: (vlog-7) Failed to open -f file "Modulos_em_System_Verilog" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_pro/19.2/modelsim_ase/win32aloem/vlog failed.
+vcom -f Modulos_em_VHDL
+# ** Error: (vcom-7) Failed to open -f file "Modulos_em_VHDL" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_pro/19.2/modelsim_ase/win32aloem/vcom failed.
+
+vsim -L altera_mf_ver -gui work.Simulation
+# End time: 18:00:18 on Sep 11,2019, Elapsed time: 0:02:25
+# Errors: 4, Warnings: 6
+# vsim -L altera_mf_ver -gui work.Simulation 
+# Start time: 18:00:18 on Sep 11,2019
+# ** Error: (vsim-3170) Could not find 'Simulation'.
+#         Searched libraries:
+#             C:/intelFPGA_pro/19.2/modelsim_ase/altera/verilog/altera_mf
+#             C:/Users/jcsf2/Desktop/hw/work
+# Error loading design
+
+add wave -position end -radix decimal  sim:/Simulation/processing/CLK
+# End time: 18:00:18 on Sep 11,2019, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/RST
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/WRT
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/RST_STATE_MACHINE
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/ENTRADA_DADO
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/SAIDA_DADO
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/A
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/B
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/SAIDA
+# Unrecognized dataset prefix: sim
+add wave -position end -radix decimal  sim:/Simulation/processing/SELETOR
+# Unrecognized dataset prefix: sim
+
+run 2 ns
+# No Design Loaded!
+
+
+vlib work
+# ** Warning: (vlib-34) Library already exists at "work".
+vdel -all -lib work
+vlib work
+
+vlog -f Modulos_em_System_Verilog
+# ** Error: (vlog-7) Failed to open -f file "Modulos_em_System_Verilog" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_pro/19.2/modelsim_ase/win32aloem/vlog failed.
+vcom -f Modulos_em_VHDL
+# ** Error: (vcom-7) Failed to open -f file "Modulos_em_VHDL" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Errors: 1, Warnings: 0
+# C:/intelFPGA_pro/19.2/modelsim_ase/win32aloem/vcom failed.
+
+vsim -L altera_mf_ver -gui work.Simulation
+# vsim -L altera_mf_ver -gui work.Simulation 
+# Start time: 18:00:51 on Sep 11,2019
+# ** Error: (vsim-3170) Could not find 'Simulation'.
+#         Searched libraries:
+#             C:/intelFPGA_pro/19.2/modelsim_ase/altera/verilog/altera_mf
+#             C:/Users/jcsf2/Desktop/hw/work
+# Error loading design
+
+add wave -position end  sim:/Simulation/processing/CLK
+# End time: 18:00:52 on Sep 11,2019, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/RST
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/WRT
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/RST_STATE_MACHINE
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/ENTRADA_DADO
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/SAIDA_DADO
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/A
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/B
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/SAIDA
+# Unrecognized dataset prefix: sim
+add wave -position end  sim:/Simulation/processing/SELETOR
+# Unrecognized dataset prefix: sim
+
+run 2 ns
+# No Design Loaded!
+
+
+do script
+# Cannot open macro file: script
+do script
+# Cannot open macro file: script
+do script1
+# Cannot open macro file: script1
+dataset reload -f
+# Dataset not found: 
+do script1
+# ** Warning: (vlib-34) Library already exists at "work".
+# ** Error: (vlog-7) Failed to open -f file "Modulos_em_System_Verilog" in read mode.
+# No such file or directory. (errno = ENOENT)
+# Errors: 1, Warnings: 0
+# ** Error: C:/intelFPGA_pro/19.2/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./script1 line 5
+# C:/intelFPGA_pro/19.2/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -f Modulos_em_System_Verilog"
+do script1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 18:09:02 on Sep 11,2019
+# vlog -reportprogress 300 -f modulos 
+# -- Compiling module Codigo_fonte
+# -- Compiling module State_machine
+# -- Compiling module register
+# -- Compiling module Simulation
+# ** Warning: State_machine.sv(1): (vlog-2275) 'State_machine' already exists and will be overwritten.
+# -- Compiling module State_machine
+# -- Compiling module UP
+# 
+# Top level modules:
+# 	State_machine
+# 	Simulation
+# End time: 18:09:02 on Sep 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 18:09:02 on Sep 11,2019
+# vcom -reportprogress 300 -f ula 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity Ula64
+# -- Compiling architecture behavioral of Ula64
+# End time: 18:09:02 on Sep 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -L altera_mf_ver -gui work.Simulation 
+# Start time: 18:09:02 on Sep 11,2019
+# Loading sv_std.std
+# Loading work.Simulation
+# Loading work.UP
+# Loading work.register
+# Loading work.Codigo_fonte
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'z'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Igual'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Menor'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+do script1
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 18:10:16 on Sep 11,2019
+# vlog -reportprogress 300 -f modulos 
+# -- Compiling module Codigo_fonte
+# -- Compiling module State_machine
+# -- Compiling module register
+# -- Compiling module Simulation
+# ** Warning: State_machine.sv(1): (vlog-2275) 'State_machine' already exists and will be overwritten.
+# -- Compiling module State_machine
+# -- Compiling module UP
+# 
+# Top level modules:
+# 	State_machine
+# 	Simulation
+# End time: 18:10:16 on Sep 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+# Start time: 18:10:16 on Sep 11,2019
+# vcom -reportprogress 300 -f ula 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Compiling entity Ula64
+# -- Compiling architecture behavioral of Ula64
+# End time: 18:10:16 on Sep 11,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 18:10:18 on Sep 11,2019, Elapsed time: 0:01:16
+# Errors: 0, Warnings: 7
+# vsim -L altera_mf_ver -gui work.Simulation 
+# Start time: 18:10:18 on Sep 11,2019
+# Loading sv_std.std
+# Loading work.Simulation
+# Loading work.UP
+# Loading work.register
+# Loading work.Codigo_fonte
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.std_logic_arith(body)
+# Loading work.ula64(behavioral)
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'z'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Igual'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
+# ** Warning: (vsim-8822) UP.sv(9): [TFMPC] - Missing Verilog connection for formal VHDL port 'Menor'.
+#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd

@@ -1,0 +1,22 @@
+vlib work
+vdel -all -lib work
+vlib work
+
+vlog -f modulos
+vcom -f ula
+
+vsim -L altera_mf_ver -gui work.Simulation
+
+add wave -position end -radix decimal  sim:/Simulation/processing/CLK
+add wave -position end  sim:/Simulation/processing/RST
+add wave -position end  sim:/Simulation/processing/WRT
+add wave -position end  sim:/Simulation/processing/RST_STATE_MACHINE
+add wave -position end  sim:/Simulation/processing/ENTRADA_DADO
+add wave -position end -radix decimal  sim:/Simulation/processing/SAIDA_DADO
+add wave -position end -radix decimal  sim:/Simulation/processing/A
+add wave -position end -radix decimal  sim:/Simulation/processing/B
+add wave -position end  sim:/Simulation/processing/SAIDA
+add wave -position end  sim:/Simulation/processing/SELETOR
+
+run 2 ns
+
