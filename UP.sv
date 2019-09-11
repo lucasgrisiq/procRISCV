@@ -1,6 +1,6 @@
-module UP;
-    wire CLK, RST, WRT, RST_STATE_MACHINE;                      //Declaração dos fios de 1bit
-    wire [63:0] ENTRADA_DADO,SAIDA_DADO;     //Declaração dos fios de 64bits
+module UP(input CLK, input RST);
+    wire WRT, RST_STATE_MACHINE;                      //DeclaraÃ§Ã£o dos fios de 1bit
+    wire [63:0] ENTRADA_DADO,SAIDA_DADO;     //DeclaraÃ§Ã£o dos fios de 64bits
     register PC (.clk(CLK), .reset(RST_STATE_MACHINE), .regWrite(WRT), .DadoIn(ENTRADA_DADO), .DadoOut(SAIDA_DADO));
     
     //variaveis da ULA
