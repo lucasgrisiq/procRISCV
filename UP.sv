@@ -8,9 +8,9 @@ module UP  (input logic CLK,
     logic [5:0]     INSTR11_7, INSTR19_15,INSTR24_20;
     logic [6:0]     INSTR6_0;
     logic [31:0]    MEMORIA_IN, MEMORIA_OUT, INSTR31_0;
-    
-    wire WRT_PC, RST_STATE_MACHINE;                      //Declaracao dos fios de 1bit
-    wire [63:0] ENTRADA_DADO,SAIDA_DADO;                 //Declaracao dos fios de 64bits
+    logic           WRITE_MEM_INST_2, WRITE_INST_2;
+    wire            WRT_PC, RST_STATE_MACHINE;                      //Declaracao dos fios de 1bit
+    wire [63:0]     ENTRADA_DADO,SAIDA_DADO;                 //Declaracao dos fios de 64bits
     
     register PC (.clk(CLK),
                  .reset(RST_STATE_MACHINE),
@@ -26,7 +26,7 @@ module UP  (input logic CLK,
                                   .Instr19_15(INSTR19_15),
                                   .Instr24_20(INSTR24_20),
                                   .Instr6_0(INSTR6_0),
-                                  .Load_ir(WRITE_INSTRUCTION));
+                                  .Load_ir(WRITE_INST_2));
 
     //variaveis da ULA
 
@@ -36,8 +36,8 @@ module UP  (input logic CLK,
                 .Seletor(SELETOR));
     
     Memoria32 MEM_32_INSTRUCTIONS ( .Clk(CLK),
-                                    .radress(SAIDA_DADO),
-                                    .wadress(ENTRADA_DADO),
+                                    .raddress(SAIDA_DADO),
+                                    .waddress(ENTRADA_DADO),
                                     .Datain(MEMORIA_IN),
                                     .Dataout(MEMORIA_OUT),
                                     .Wr(WR_MEM_INSTR));
@@ -46,6 +46,8 @@ module UP  (input logic CLK,
                               .RST(RST),
                               .reset_wire(RST_STATE_MACHINE),
                               .operacao(SELETOR),
-                              .writeReg(WRT_PC));
+                              .WRITE_PC(WRT_PC),
+                              .WRITE_MEM_INSTR(WRITE_MEM_INST_2),
+                              .WRITE_INSTRUCTION(WRITE_INST_2));
 
 endmodule

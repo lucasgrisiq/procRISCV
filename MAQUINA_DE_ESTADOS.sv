@@ -44,7 +44,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             end
            
            load_reg:begin
-                WRITE_INSTRUCTION   = 1'b0;
+                WRITE_INSTRUCTION   = 1'b1;
                 WR_MEM_INSTR        = 1'b1;
                 prox_estado         = espera;
                 operacao            = 3'b000;
