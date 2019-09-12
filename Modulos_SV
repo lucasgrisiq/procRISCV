@@ -1,8 +1,7 @@
-Codigo_fonte.sv
+MAQUINA_DE_ESTADOS.sv
 Processador.sv
 register.sv
 Simulation.sv
-State_machine.sv
 UP.sv
 Memoria64.sv
 Memoria32.sv
