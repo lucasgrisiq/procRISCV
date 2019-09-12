@@ -1,14 +1,12 @@
 module UP  (input logic CLK,
-            input logic RST,
-            input logic WR_MEM_INSTR, 
-            input logic WRITE_INSTRUCTION);
+            input logic RST);
     
     logic [63:0]    A,B,SAIDA;
     logic [2:0]     SELETOR;
     logic [4:0]     INSTR11_7, INSTR19_15,INSTR24_20;
     logic [6:0]     INSTR6_0;
     logic [31:0]    MEMORIA_IN, MEMORIA_OUT, INSTR31_0;
-    logic           WRITE_MEM_INST_2, WRITE_INST_2;
+    logic           WR_MEM_INSTR, LOAD_IR;
     wire            WRT_PC, RST_STATE_MACHINE;                      //Declaracao dos fios de 1bit
     wire [63:0]     ENTRADA_DADO,SAIDA_DADO;                 //Declaracao dos fios de 64bits
     
@@ -26,7 +24,7 @@ module UP  (input logic CLK,
                                   .Instr19_15(INSTR19_15),
                                   .Instr24_20(INSTR24_20),
                                   .Instr6_0(INSTR6_0),
-                                  .Load_ir(WRITE_INST_2));
+                                  .Load_ir(LOAD_IR));
 
     //variaveis da ULA
 
@@ -47,7 +45,7 @@ module UP  (input logic CLK,
                               .reset_wire(RST_STATE_MACHINE),
                               .operacao(SELETOR),
                               .WRITE_PC(WRT_PC),
-                              .WRITE_MEM_INSTR(WRITE_MEM_INST_2),
-                              .WRITE_INSTRUCTION(WRITE_INST_2));
+                              .WR_MEM_INSTR(WR_MEM_INSTR),
+                              .LOAD_IR(LOAD_IR));
 
 endmodule

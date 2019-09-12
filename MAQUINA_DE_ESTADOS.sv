@@ -3,7 +3,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             output logic reset_wire, 
                             output logic [2:0] operacao, 
                             output logic WRITE_PC,
-                            output logic WRITE_INSTRUCTION, 
+                            output logic LOAD_IR, 
                             output logic WR_MEM_INSTR);
     
     enum bit[2:0] {reset, soma, espera, load_reg} estado, prox_estado;
@@ -17,8 +17,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
     always_comb begin
         case(estado)
             reset:begin
-                WRITE_INSTRUCTION   = 1'b0;
-                WR_MEM_INSTR        = 1'b1;
+                LOAD_IR             = 1'b0;
+                WR_MEM_INSTR        = 1'b0;
                 reset_wire          = 1'b1;
                 operacao            = 3'b000;
                 WRITE_PC            = 1'b0;
@@ -26,7 +26,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             end
 
             soma:begin
-                WRITE_INSTRUCTION   = 1'b0;
+                LOAD_IR             = 1'b0;
                 WR_MEM_INSTR        = 1'b0;
                 reset_wire          = 1'b0;
                 operacao            = 3'b001;
@@ -35,8 +35,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             end
             
             espera:begin
-                WRITE_INSTRUCTION   = 1'b0;
-                WR_MEM_INSTR        = 1'b1;
+                LOAD_IR             = 1'b0;
+                WR_MEM_INSTR        = 1'b0;
                 reset_wire          = 1'b0;
                 operacao            = 1'b0;
                 WRITE_PC            = 1'b0;
@@ -44,8 +44,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             end
            
            load_reg:begin
-                WRITE_INSTRUCTION   = 1'b1;
-                WR_MEM_INSTR        = 1'b1;
+                LOAD_IR             = 1'b1;
+                WR_MEM_INSTR        = 1'b0;
                 prox_estado         = espera;
                 operacao            = 3'b000;
                 reset_wire          = 1'b0;
