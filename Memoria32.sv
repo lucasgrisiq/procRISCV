@@ -24,7 +24,7 @@
 ------------------------------------------------------------------------------*/
 
 module Memoria32 
-    (input  wire  [63:0]raddress,
+    (input  wire  [63:0]address,
      input  wire  [63:0]waddress,
      input  wire  Clk,         
      input  wire  [31:0]Datain,
@@ -79,6 +79,5 @@ module Memoria32
     ramOnChip32 #(.ramSize(65536), .ramWide(8) ) memBlock3 (.clk(Clk), .data(inS3), .radd(addS3), .wadd(waddS3), .wren(Wr), .q(outS3) );
         
 endmodule
-    
     
     
