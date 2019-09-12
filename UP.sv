@@ -5,7 +5,7 @@ module UP  (input logic CLK,
     
     logic [63:0]    A,B,SAIDA;
     logic [2:0]     SELETOR;
-    logic [5:0]     INSTR11_7, INSTR19_15,INSTR24_20;
+    logic [4:0]     INSTR11_7, INSTR19_15,INSTR24_20;
     logic [6:0]     INSTR6_0;
     logic [31:0]    MEMORIA_IN, MEMORIA_OUT, INSTR31_0;
     logic           WRITE_MEM_INST_2, WRITE_INST_2;
