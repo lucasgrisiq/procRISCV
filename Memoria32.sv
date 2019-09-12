@@ -24,7 +24,7 @@
 ------------------------------------------------------------------------------*/
 
 module Memoria32 
-    (input  wire  [63:0]address,
+    (input  wire  [63:0]raddress,
      input  wire  [63:0]waddress,
      input  wire  Clk,         
      input  wire  [31:0]Datain,
