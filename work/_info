@@ -7,162 +7,289 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/jcsf2/Desktop/hw
-vCodigo_fonte
-Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z2 !s110 1568236216
+Z0 dC:/Users/lgoq/Desktop/proj/procRISCV
+Einstr_reg_risc_v
+Z1 w1568392093
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z4 8Instr_Reg_Risc_V.vhd
+Z5 FInstr_Reg_Risc_V.vhd
+l0
+L49
+VzgO8gWh_:1J3Q7IMD_6361
+!s100 HF;HEc4<o>]o3`Jjc=WPJ2
+Z6 OV;C;10.6d;65
+32
+Z7 !s110 1568393443
 !i10b 1
-!s100 FGeF[DIWUI6@67ZR>k0e33
-IGgI?]0bh?Z<3ZOen_V:mF0
-Z3 VDg1SIo80bB@j0V0VzS_@n1
-!s105 Codigo_fonte_sv_unit
+Z8 !s108 1568393443.000000
+Z9 !s90 -reportprogress|300|-f|Modulos_VHD|
+!s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
+!i113 1
+Z10 tExplicit 1 CvgOpt 0
+Abehavioral_arch
+R2
+R3
+DEx4 work 16 instr_reg_risc_v 0 22 zgO8gWh_:1J3Q7IMD_6361
+l68
+L65
+Vm]9:ocK@DX0U7ei8f63dc3
+!s100 e?bWG@:SnkVC476;`5UQ[1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+Z11 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
+!i113 1
+R10
+vMAQUINA_DE_ESTADOS
+Z12 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
+R7
+!i10b 1
+!s100 ]_>@Ym;Bol>mhC;DJcbVn2
+IdRee3l>T<dD[UMDNS_EP41
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+!s105 MAQUINA_DE_ESTADOS_sv_unit
 S1
 R0
-Z4 w1568229328
-8Codigo_fonte.sv
-FCodigo_fonte.sv
+R1
+8MAQUINA_DE_ESTADOS.sv
+FMAQUINA_DE_ESTADOS.sv
 L0 1
-Z5 OV;L;10.6d;65
+Z14 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1568236216.000000
-Z7 !s107 UP.sv|State_machine.sv|Simulation.sv|register.sv|Processador.sv|Codigo_fonte.sv|
-Z8 !s90 -reportprogress|300|-f|modulos|
+R8
+Z15 !s107 ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
+Z16 !s90 -reportprogress|300|-f|Modulos_SV|
 !i113 1
-Z9 tCvgOpt 0
-n@codigo_fonte
-vregister
-R1
-R2
+Z17 tCvgOpt 0
+n@m@a@q@u@i@n@a_@d@e_@e@s@t@a@d@o@s
+vMemoria32
+R12
+R7
 !i10b 1
-!s100 bYE8;I>5ooJ_Za^;]7VNI0
-I`1RNN7Ob]9_kWo]Kj_HUK0
-R3
+!s100 SBjZ6@cgEgTaJzOB`9aUg1
+ICEYMAH>O[?I3ZUI@MMIf<0
+R13
+!s105 Memoria32_sv_unit
+S1
+R0
+R1
+8Memoria32.sv
+FMemoria32.sv
+Z18 L0 26
+R14
+r1
+!s85 0
+31
+R8
+R15
+R16
+!i113 1
+R17
+n@memoria32
+vMemoria64
+R12
+R7
+!i10b 1
+!s100 1fz3Mgbi`W1QjWk]9CgUO3
+I^?H2gZ;TW^1aQMHUQjIJN1
+R13
+!s105 Memoria64_sv_unit
+S1
+R0
+R1
+8Memoria64.sv
+FMemoria64.sv
+R18
+R14
+r1
+!s85 0
+31
+R8
+R15
+R16
+!i113 1
+R17
+n@memoria64
+vramOnChip32
+R7
+!i10b 1
+!s100 ?cVfgbFYaCB@4255f4cUf3
+IOOLMj_cg_N:74eHXMeQLm3
+R13
+R0
+R1
+8ramOnChip32.v
+FramOnChip32.v
+Z19 L0 40
+R14
+r1
+!s85 0
+31
+R8
+R15
+R16
+!i113 1
+R17
+nram@on@chip32
+vramOnChip64
+R7
+!i10b 1
+!s100 cocMaFKEzGMH4F3EWeV]X1
+I5Bnob:67XieXOZhhzR6A22
+R13
+R0
+R1
+8ramOnChip64.v
+FramOnChip64.v
+R19
+R14
+r1
+!s85 0
+31
+R8
+R15
+R16
+!i113 1
+R17
+nram@on@chip64
+vregister
+R12
+R7
+!i10b 1
+!s100 dH7K;MUGFf1fzoV?@SkA[2
+I1o6=cUe?iT;RNP;Q1fAk41
+R13
 !s105 register_sv_unit
 S1
 R0
-R4
+R1
 8register.sv
 Fregister.sv
 L0 1
-R5
+R14
 r1
 !s85 0
 31
-R6
-R7
 R8
+R15
+R16
 !i113 1
-R9
+R17
 vSimulation
-R1
-R2
+R12
+R7
 !i10b 1
 !s100 @k[6AoUBRAGkeNZKl9@S71
 I9T[B[iE3FCXdf]:TUJ8J03
-R3
+R13
 !s105 Simulation_sv_unit
 S1
 R0
-R4
+R1
 8Simulation.sv
 FSimulation.sv
 L0 2
-R5
+R14
 r1
 !s85 0
 31
-R6
-R7
 R8
+R15
+R16
 !i113 1
-R9
+R17
 n@simulation
 vState_machine
-R1
-R2
+R12
+R7
 !i10b 1
 !s100 BZW?FDYSK7Sc>TKQ:QfW73
-IldH@i[8Gz4oMdL0`e>39@3
-R3
-!s105 State_machine_sv_unit
+IWa7JK2?G_c^EGooSe;E]K2
+R13
+!s105 Processador_sv_unit
 S1
 R0
-R4
-8State_machine.sv
-FState_machine.sv
+R1
+8Processador.sv
+FProcessador.sv
 L0 1
-R5
+R14
 r1
 !s85 0
 31
-R6
-R7
 R8
+R15
+R16
 !i113 1
-R9
+R17
 n@state_machine
 Eula64
-R4
-Z10 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-Z11 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z12 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R1
+Z20 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R2
+R3
 R0
-Z13 8ula64.vhd
-Z14 Fula64.vhd
+Z21 8ula64.vhd
+Z22 Fula64.vhd
 l0
 L54
 VA[hKfbX3SC@81eT`QAGTa0
 !s100 gXP0QOjWED7GdgGCHP44]0
-Z15 OV;C;10.6d;65
-32
-R2
-!i10b 1
 R6
-Z16 !s90 -reportprogress|300|-f|ula|
-!s107 ula64.vhd|
-!i113 1
-Z17 tExplicit 1 CvgOpt 0
-Abehavioral
-R10
+32
+R7
+!i10b 1
+R8
+R9
 R11
-R12
+!i113 1
+R10
+Abehavioral
+R20
+R2
+R3
 DEx4 work 5 ula64 0 22 A[hKfbX3SC@81eT`QAGTa0
 l80
 L70
 VITWg]kaXHNgAHH8EBQEIM3
 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
-R15
-32
-R2
-!i10b 1
 R6
-R16
-Z18 !s107 ula64.vhd|
-!i113 1
-R17
-vUP
-R1
-R2
+32
+R7
 !i10b 1
-!s100 Y4Xl[VGSFH]]UjOlYVQ`61
-I60XFj;aEkkC?U?F7<_XFd3
-R3
+R8
+R9
+R11
+!i113 1
+R10
+vUP
+R12
+R7
+!i10b 1
+!s100 0_BDFhGozX;9HBSTMJXo`2
+IYT6?i`fEhFA<W]IQ2IH>M1
+R13
 !s105 UP_sv_unit
 S1
 R0
-R4
+w1568393380
 8UP.sv
 FUP.sv
 L0 1
-R5
+R14
 r1
 !s85 0
 31
-R6
-R7
 R8
+R15
+R16
 !i113 1
-R9
+R17
 n@u@p

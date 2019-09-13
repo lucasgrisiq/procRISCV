@@ -1,0 +1,95 @@
+C:/Users/lgoq/Desktop/proj/procRISCV/ula64.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/ula64.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Compiling entity Ula64
+-- Compiling architecture behavioral of Ula64
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/Processador.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/Processador.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module State_machine
+
+Top level modules:
+	State_machine
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/State_machine.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/State_machine.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module State_machine
+
+Top level modules:
+	State_machine
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/Deslocamento.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/Deslocamento.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Deslocamento
+
+Top level modules:
+	Deslocamento
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/ramOnChip64.v {1 {vlog -work work -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/ramOnChip64.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module ramOnChip64
+
+Top level modules:
+	ramOnChip64
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/ramOnChip32.v {1 {vlog -work work -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/ramOnChip32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module ramOnChip32
+
+Top level modules:
+	ramOnChip32
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/register.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/Simulation.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/Simulation.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Simulation
+
+Top level modules:
+	Simulation
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/MAQUINA_DE_ESTADOS.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/MAQUINA_DE_ESTADOS.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MAQUINA_DE_ESTADOS
+
+Top level modules:
+	MAQUINA_DE_ESTADOS
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/Memoria32.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/Memoria32.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Memoria32
+
+Top level modules:
+	Memoria32
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/bancoReg.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/bancoReg.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module bancoReg
+
+Top level modules:
+	bancoReg
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/Instr_Reg_Risc_V.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/Instr_Reg_Risc_V.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg_RISC_V
+-- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
+
+} {} {}} C:/Users/lgoq/Desktop/proj/procRISCV/Memoria64.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/proj/procRISCV/Memoria64.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Memoria64
+
+Top level modules:
+	Memoria64
+
+} {} {}}

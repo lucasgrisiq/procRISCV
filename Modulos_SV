@@ -5,3 +5,5 @@ Simulation.sv
 UP.sv
 Memoria64.sv
 Memoria32.sv
+ramOnChip32.v
+ramOnChip64.v

@@ -1,7 +1,7 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [63:0]    A,B,SAIDA;
+    logic [63:0]    A,B;
     logic [2:0]     SELETOR;
     logic [4:0]     INSTR11_7, INSTR19_15,INSTR24_20;
     logic [6:0]     INSTR6_0;
