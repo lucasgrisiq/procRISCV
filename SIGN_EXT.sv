@@ -1,4 +1,4 @@
-module SIGN_EXT (input logic [31:0] ENTRADA
+module SIGN_EXT (input logic [31:0] ENTRADA,
                  output logic [63:0] SAIDA);
 
     enum bit [2:0] {tipoI, tipoS, tipoSB, tipoU, tipoUJ} tipo;
@@ -8,7 +8,7 @@ module SIGN_EXT (input logic [31:0] ENTRADA
     always_comb begin
         op_code = ENTRADA[6:0];
         
-        case (op_code) begin
+        case (op_code) 
             7'b0010011: begin tipo = tipoI; end
             7'b1100111: begin tipo = tipoI; end
             7'b0000011: begin tipo = tipoI; end
@@ -18,13 +18,13 @@ module SIGN_EXT (input logic [31:0] ENTRADA
             7'b1100111: begin tipo = tipoSB; end
             7'b0110111: begin tipo = tipoU; end
             7'b1101111: begin tipo = tipoUJ; end
-        end
+        endcase
 
         case (tipo)
             
             tipoI: begin
                 SAIDA[11:0] = ENTRADA[31:20];
-                if (ENTRADA[31] == 1) SAIDA[63:12] = 1;
+                if (ENTRADA[31:31] == 1) SAIDA[63:12] = 1;
                 else SAIDA[63:12] = 0;
             end
 
@@ -61,6 +61,7 @@ module SIGN_EXT (input logic [31:0] ENTRADA
                 if (ENTRADA[31] == 1) SAIDA[63:32] = 1;
                 else SAIDA[63:32] = 0;
             end
+        endcase
     end
 
 
