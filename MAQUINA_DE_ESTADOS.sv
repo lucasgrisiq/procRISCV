@@ -9,12 +9,12 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             output logic SELECT_MUX_A,
                             output logic [1:0] SELECT_MUX_B);
     
-    enum bit [2:0] {reset, somaPC, espera, load_reg} estado, prox_estado;
+    enum bit [2:0] {reset, somaPC, espera, load_reg} Estado, prox_estado;
     enum bit [2:0] {tipoR, tipoI, tipoS, tipoSB, tipoU, tipoUJ} tipoOP;
 
     always_ff @(posedge CLK, posedge RST) begin
-        if(RST) estado  <= reset;
-        else estado     <= prox_estado;
+        if(RST) Estado  <= reset;
+        else Estado     <= prox_estado;
     end
     
     
