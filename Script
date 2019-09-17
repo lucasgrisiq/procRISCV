@@ -7,16 +7,13 @@ vcom -f Modulos_VHD
 
 vsim -L altera_mf_ver -gui work.Simulation
 
-add wave -position end  sim:/Simulation/clock
-add wave -position end  sim:/Simulation/processing/RST
-add wave -position end -radix decimal  sim:/Simulation/processing/SAIDA_DADO
-add wave -position end  sim:/Simulation/processing/SELETOR
 add wave -position end  sim:/Simulation/processing/INSTR31_0
-add wave -position end  sim:/Simulation/processing/INSTR6_0
-add wave -position end  sim:/Simulation/processing/INSTR11_7
-add wave -position end  sim:/Simulation/processing/INSTR19_15
-add wave -position end  sim:/Simulation/processing/INSTR24_20
-add wave -position end  sim:/Simulation/processing/MEMORIA_OUT
+add wave -position end  sim:/Simulation/processing/AluOut
+add wave -position end  sim:/Simulation/processing/OPERATION
+add wave -position end  sim:/Simulation/processing/A
+add wave -position end  sim:/Simulation/processing/B
+add wave -position end  sim:/Simulation/clock
+
 
 run 100 ns
 
