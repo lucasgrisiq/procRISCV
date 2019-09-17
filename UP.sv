@@ -9,7 +9,7 @@ module UP  (input logic CLK,
     logic [6:0]     OP_CODE;
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
     logic           wrInstMem, IRWrite;
-    logic            WRT_PC, RST_STATE_MACHINE;                      //Declaracao dos fios de 1bit
+    logic            WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
     logic [63:0]     Alu, PC, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64;                 //Declaracao dos fios de 64bits
     
     register PCreg (.clk(CLK),
@@ -81,7 +81,9 @@ module UP  (input logic CLK,
     ula64 ULA ( .A(SAIDA_MUX_A),
                 .B(SAIDA_MUX_B),
                 .S(Alu),
-                .Seletor(OPERATION));
+                .Seletor(OPERATION),
+                .Igual(IGUAL),
+                .z(ZERO));
     
     Memoria32 MEM_32_INSTRUCTIONS ( .Clk(CLK),
                                     .raddress(PC),
@@ -113,6 +115,8 @@ module UP  (input logic CLK,
                               .WR_MEM_INSTR(wrInstMem),
                               .LOAD_IR(IRWrite),
                               .SELETOR_MUX_A(SELETOR_MUX_A),
-                              .SELETOR_MUX_B(SELETOR_MUX_B));
+                              .SELETOR_MUX_B(SELETOR_MUX_B),
+                              .ZERO_ALU(ZERO),
+                              .IGUAL_ALU(ALU));
 
 endmodule
