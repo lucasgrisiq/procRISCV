@@ -10,449 +10,430 @@ cModel Technology
 Z0 dC:/Users/lgoq/Desktop/procRISCV
 vbancoReg
 Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z2 !s110 1568763172
+Z2 !s110 1568829098
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
-IXRnfeVk08;[C48o]fdP;a3
+I`MOnE05dQ1@`[Y_O[A[=11
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 bancoReg_sv_unit
 S1
 R0
-Z4 w1568664887
-8C:/Users/lgoq/Desktop/procRISCV/bancoReg.sv
-FC:/Users/lgoq/Desktop/procRISCV/bancoReg.sv
+Z4 w1568826169
+8bancoReg.sv
+FbancoReg.sv
 L0 1
 Z5 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1568763172.000000
-!s107 C:/Users/lgoq/Desktop/procRISCV/bancoReg.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/bancoReg.sv|
+Z6 !s108 1568829098.000000
+Z7 !s107 MUX_DATA_REG.sv|bancoReg.sv|Deslocamento.sv|MUX_A_ULA.sv|MUX_B_ULA.sv|SIGN_EXT.sv|ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
+Z8 !s90 -reportprogress|300|-f|Modulos_SV|
 !i113 1
-Z7 o-work work -sv
-Z8 tCvgOpt 0
+Z9 tCvgOpt 0
 nbanco@reg
 vDeslocamento
 R1
 R2
 !i10b 1
 !s100 EMH`UB_G1bTeiVdfJ^^>l1
-IKdMghBF^B;JFX=k73RBWm2
+InE0bLM7_f`2Pfna4BUZW_2
 R3
 !s105 Deslocamento_sv_unit
 S1
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/Deslocamento.sv
-FC:/Users/lgoq/Desktop/procRISCV/Deslocamento.sv
+8Deslocamento.sv
+FDeslocamento.sv
 L0 1
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/lgoq/Desktop/procRISCV/Deslocamento.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/Deslocamento.sv|
-!i113 1
 R7
 R8
+!i113 1
+R9
 n@deslocamento
 Einstr_reg_risc_v
 R4
-Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z10 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z11 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z11 8C:/Users/lgoq/Desktop/procRISCV/Instr_Reg_Risc_V.vhd
-Z12 FC:/Users/lgoq/Desktop/procRISCV/Instr_Reg_Risc_V.vhd
+Z12 8Instr_Reg_Risc_V.vhd
+Z13 FInstr_Reg_Risc_V.vhd
 l0
 L49
-V7TD3cNADG8G:ODlTSzz?c1
+VzgO8gWh_:1J3Q7IMD_6361
 !s100 HF;HEc4<o>]o3`Jjc=WPJ2
-Z13 OV;C;10.6d;65
+Z14 OV;C;10.6d;65
 32
 R2
 !i10b 1
 R6
-Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/lgoq/Desktop/procRISCV/Instr_Reg_Risc_V.vhd|
-Z15 !s107 C:/Users/lgoq/Desktop/procRISCV/Instr_Reg_Risc_V.vhd|
+Z15 !s90 -reportprogress|300|-f|Modulos_VHD|
+!s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
-Z16 o-work work -2002 -explicit
-Z17 tExplicit 1 CvgOpt 0
+Z16 tExplicit 1 CvgOpt 0
 Abehavioral_arch
-R9
 R10
-DEx4 work 16 instr_reg_risc_v 0 22 7TD3cNADG8G:ODlTSzz?c1
+R11
+DEx4 work 16 instr_reg_risc_v 0 22 zgO8gWh_:1J3Q7IMD_6361
 l68
 L65
-Vo8SZoo^`iHF7`CU3CnhD`1
+Vm]9:ocK@DX0U7ei8f63dc3
 !s100 e?bWG@:SnkVC476;`5UQ[1
-R13
+R14
 32
 R2
 !i10b 1
 R6
-R14
 R15
+Z17 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
 R16
-R17
 vMAQUINA_DE_ESTADOS
 R1
-Z18 !s110 1568763173
+R2
 !i10b 1
-!s100 MFo4_ezVYE27elgi3YHaJ3
-I=FGBhn2gGbS`Qhzm@kl>m3
+!s100 DPUMAQSkRbbPLeQGYOeDK1
+IPjh=mCWl2M?X0X7lLAM3]2
 R3
 !s105 MAQUINA_DE_ESTADOS_sv_unit
 S1
 R0
-w1568762912
-8C:/Users/lgoq/Desktop/procRISCV/MAQUINA_DE_ESTADOS.sv
-FC:/Users/lgoq/Desktop/procRISCV/MAQUINA_DE_ESTADOS.sv
+w1568828132
+8MAQUINA_DE_ESTADOS.sv
+FMAQUINA_DE_ESTADOS.sv
 L0 1
 R5
 r1
 !s85 0
 31
-Z19 !s108 1568763173.000000
-!s107 C:/Users/lgoq/Desktop/procRISCV/MAQUINA_DE_ESTADOS.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/MAQUINA_DE_ESTADOS.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@m@a@q@u@i@n@a_@d@e_@e@s@t@a@d@o@s
 vMemoria32
 R1
-R18
+R2
 !i10b 1
 !s100 SBjZ6@cgEgTaJzOB`9aUg1
-I:CdDfiH649W=zLRR07hWd3
+ICEYMAH>O[?I3ZUI@MMIf<0
 R3
 !s105 Memoria32_sv_unit
 S1
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/Memoria32.sv
-FC:/Users/lgoq/Desktop/procRISCV/Memoria32.sv
-Z20 L0 26
+8Memoria32.sv
+FMemoria32.sv
+Z18 L0 26
 R5
 r1
 !s85 0
 31
-R19
-!s107 C:/Users/lgoq/Desktop/procRISCV/Memoria32.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/Memoria32.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@memoria32
 vMemoria64
 R1
-R18
+R2
 !i10b 1
 !s100 1fz3Mgbi`W1QjWk]9CgUO3
-I>Y0MJenF8ZzPCN0:Wl]mC3
+I^?H2gZ;TW^1aQMHUQjIJN1
 R3
 !s105 Memoria64_sv_unit
 S1
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/Memoria64.sv
-FC:/Users/lgoq/Desktop/procRISCV/Memoria64.sv
-R20
+8Memoria64.sv
+FMemoria64.sv
+R18
 R5
 r1
 !s85 0
 31
-R19
-!s107 C:/Users/lgoq/Desktop/procRISCV/Memoria64.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/Memoria64.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@memoria64
 vMUX_A_ULA
 R1
-R18
+R2
 !i10b 1
 !s100 U^ea@@BRec5^o<imJBMFk0
-IP2?jGIaFY9IJ_3Dl?LLZY2
+ICMWzdMM1a3RmYM[TA0Dfz3
 R3
 !s105 MUX_A_ULA_sv_unit
 S1
 R0
-w1568671030
-8C:/Users/lgoq/Desktop/procRISCV/MUX_A_ULA.sv
-FC:/Users/lgoq/Desktop/procRISCV/MUX_A_ULA.sv
+R4
+8MUX_A_ULA.sv
+FMUX_A_ULA.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R19
-!s107 C:/Users/lgoq/Desktop/procRISCV/MUX_A_ULA.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/MUX_A_ULA.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@m@u@x_@a_@u@l@a
 vMUX_B_ULA
 R1
-R18
+R2
 !i10b 1
 !s100 >KdOBBJSWl6S0FZR4__X=2
-ILncL=;PdR3n1EnZ7NUOA00
+IhPV?OlMH9V;cne8W?Q6@23
 R3
 !s105 MUX_B_ULA_sv_unit
 S1
 R0
-w1568671012
-8C:/Users/lgoq/Desktop/procRISCV/MUX_B_ULA.sv
-FC:/Users/lgoq/Desktop/procRISCV/MUX_B_ULA.sv
+R4
+8MUX_B_ULA.sv
+FMUX_B_ULA.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R19
-!s107 C:/Users/lgoq/Desktop/procRISCV/MUX_B_ULA.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/MUX_B_ULA.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@m@u@x_@b_@u@l@a
 vMUX_DATA_REG
 R1
-R18
+R2
 !i10b 1
 !s100 WXk?nf`HI[TQz@hWAX=]40
-I90F1d1zCSAWQ0]B3O2>aY3
+ID8@V`Wo46KGjkT1`><nUQ3
 R3
 !s105 MUX_DATA_REG_sv_unit
 S1
 R0
-w1568670995
-8C:/Users/lgoq/Desktop/procRISCV/MUX_DATA_REG.sv
-FC:/Users/lgoq/Desktop/procRISCV/MUX_DATA_REG.sv
+R4
+8MUX_DATA_REG.sv
+FMUX_DATA_REG.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R19
-!s107 C:/Users/lgoq/Desktop/procRISCV/MUX_DATA_REG.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/MUX_DATA_REG.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@m@u@x_@d@a@t@a_@r@e@g
 vramOnChip32
-Z21 !s110 1568763174
+R2
 !i10b 1
 !s100 ?cVfgbFYaCB@4255f4cUf3
-IjVilgFYQELz`C`8<kURGM3
+IOOLMj_cg_N:74eHXMeQLm3
 R3
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/ramOnChip32.v
-FC:/Users/lgoq/Desktop/procRISCV/ramOnChip32.v
-Z22 L0 40
+8ramOnChip32.v
+FramOnChip32.v
+Z19 L0 40
 R5
 r1
 !s85 0
 31
-Z23 !s108 1568763174.000000
-!s107 C:/Users/lgoq/Desktop/procRISCV/ramOnChip32.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lgoq/Desktop/procRISCV/ramOnChip32.v|
-!i113 1
-Z24 o-work work
+R6
+R7
 R8
+!i113 1
+R9
 nram@on@chip32
 vramOnChip64
-R21
+R2
 !i10b 1
 !s100 cocMaFKEzGMH4F3EWeV]X1
-Ic51>m:33fEJKn1n`QEQeH3
+I5Bnob:67XieXOZhhzR6A22
 R3
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/ramOnChip64.v
-FC:/Users/lgoq/Desktop/procRISCV/ramOnChip64.v
-R22
+8ramOnChip64.v
+FramOnChip64.v
+R19
 R5
 r1
 !s85 0
 31
-R23
-!s107 C:/Users/lgoq/Desktop/procRISCV/ramOnChip64.v|
-!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/lgoq/Desktop/procRISCV/ramOnChip64.v|
-!i113 1
-R24
+R6
+R7
 R8
+!i113 1
+R9
 nram@on@chip64
 vregister
 R1
-R21
+R2
 !i10b 1
 !s100 dH7K;MUGFf1fzoV?@SkA[2
-I8BokUlj?nn>3;]>O7Wn661
+I1o6=cUe?iT;RNP;Q1fAk41
 R3
 !s105 register_sv_unit
 S1
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/register.sv
-FC:/Users/lgoq/Desktop/procRISCV/register.sv
+8register.sv
+Fregister.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R23
-!s107 C:/Users/lgoq/Desktop/procRISCV/register.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/register.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 vSIGN_EXT
 R1
-R21
+R2
 !i10b 1
-!s100 cKDm7S`C7EM?=MfJCeN?C2
-I4CH13EFnogNzi^>6T3]H30
+!s100 lzkFjRgfC=LA1:XiDM1QU3
+I9M^c7m<5Q?;TM>aQDcilk0
 R3
 !s105 SIGN_EXT_sv_unit
 S1
 R0
-w1568671157
-8C:/Users/lgoq/Desktop/procRISCV/SIGN_EXT.sv
-FC:/Users/lgoq/Desktop/procRISCV/SIGN_EXT.sv
+R4
+8SIGN_EXT.sv
+FSIGN_EXT.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R23
-!s107 C:/Users/lgoq/Desktop/procRISCV/SIGN_EXT.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/SIGN_EXT.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@s@i@g@n_@e@x@t
 vSimulation
 R1
-R21
+R2
 !i10b 1
 !s100 @k[6AoUBRAGkeNZKl9@S71
-IM@oecJlF`IRXK>:fUXD781
+I9T[B[iE3FCXdf]:TUJ8J03
 R3
 !s105 Simulation_sv_unit
 S1
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/Simulation.sv
-FC:/Users/lgoq/Desktop/procRISCV/Simulation.sv
+8Simulation.sv
+FSimulation.sv
 L0 2
 R5
 r1
 !s85 0
 31
-R23
-!s107 C:/Users/lgoq/Desktop/procRISCV/Simulation.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/Simulation.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@simulation
 vState_machine
 R1
-R21
+R2
 !i10b 1
 !s100 BZW?FDYSK7Sc>TKQ:QfW73
-IjePh4BYlVBnLX>fV8gMFH2
+IWa7JK2?G_c^EGooSe;E]K2
 R3
 !s105 Processador_sv_unit
 S1
 R0
 R4
-8C:/Users/lgoq/Desktop/procRISCV/Processador.sv
-FC:/Users/lgoq/Desktop/procRISCV/Processador.sv
+8Processador.sv
+FProcessador.sv
 L0 1
 R5
 r1
 !s85 0
 31
-R23
-!s107 C:/Users/lgoq/Desktop/procRISCV/Processador.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/Processador.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@state_machine
 Eula64
 R4
-Z25 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-R9
+Z20 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R10
+R11
 R0
-Z26 8C:/Users/lgoq/Desktop/procRISCV/ula64.vhd
-Z27 FC:/Users/lgoq/Desktop/procRISCV/ula64.vhd
+Z21 8ula64.vhd
+Z22 Fula64.vhd
 l0
 L54
-VNKCl_dCU9VZRibAm_Jh<Y0
+VA[hKfbX3SC@81eT`QAGTa0
 !s100 gXP0QOjWED7GdgGCHP44]0
-R13
+R14
 32
-Z28 !s110 1568763175
+R2
 !i10b 1
-R23
-Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/lgoq/Desktop/procRISCV/ula64.vhd|
-Z30 !s107 C:/Users/lgoq/Desktop/procRISCV/ula64.vhd|
+R6
+R15
+R17
 !i113 1
 R16
-R17
 Abehavioral
-R25
-R9
+R20
 R10
-DEx4 work 5 ula64 0 22 NKCl_dCU9VZRibAm_Jh<Y0
+R11
+DEx4 work 5 ula64 0 22 A[hKfbX3SC@81eT`QAGTa0
 l80
 L70
-V0bJGE`7Xojm<X>7FGncTL1
+VITWg]kaXHNgAHH8EBQEIM3
 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
-R13
+R14
 32
-R28
+R2
 !i10b 1
-R23
-R29
-R30
+R6
+R15
+R17
 !i113 1
 R16
-R17
 vUP
 R1
-R28
+R2
 !i10b 1
 !s100 69QF]gfdhXY8bIkzFF]TM0
-ISo6GhFZm:LJSPBDl8cVHN3
+IN:S[ClgTz?M4a1Gf23d@U3
 R3
 !s105 UP_sv_unit
 S1
 R0
-w1568756975
-8C:/Users/lgoq/Desktop/procRISCV/UP.sv
-FC:/Users/lgoq/Desktop/procRISCV/UP.sv
+R4
+8UP.sv
+FUP.sv
 L0 1
 R5
 r1
 !s85 0
 31
-!s108 1568763175.000000
-!s107 C:/Users/lgoq/Desktop/procRISCV/UP.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/lgoq/Desktop/procRISCV/UP.sv|
-!i113 1
+R6
 R7
 R8
+!i113 1
+R9
 n@u@p

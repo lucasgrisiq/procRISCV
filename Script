@@ -8,11 +8,16 @@ vcom -f Modulos_VHD
 vsim -L altera_mf_ver -gui work.Simulation
 
 add wave -position end  sim:/Simulation/processing/INSTR31_0
-add wave -position end  sim:/Simulation/processing/AluOut
-add wave -position end  sim:/Simulation/processing/OPERATION
-add wave -position end  sim:/Simulation/processing/A
-add wave -position end  sim:/Simulation/processing/B
+add wave -position end -radix decimal  sim:/Simulation/processing/AluOut
+add wave -position end -radix decimal  sim:/Simulation/processing/OPERATION
+add wave -position end -radix decimal sim:/Simulation/processing/A
+add wave -position end -radix decimal sim:/Simulation/processing/B
 add wave -position end  sim:/Simulation/clock
+add wave -position end  sim:/Simulation/processing/SAIDA_MEM_64
+add wave -position end -radix decimal sim:/Simulation/processing/SAIDA_MUX_A
+add wave -position end -radix decimal sim:/Simulation/processing/SAIDA_MUX_B
+add wave -position end  sim:/Simulation/processing/MEM_REGISTER64
+add wave -position end  sim:/Simulation/processing/wrDataMemReg
 
 
 run 100 ns

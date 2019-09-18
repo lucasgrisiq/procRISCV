@@ -153,7 +153,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             SELETOR_MUX_B       = 2'b10;
                             WR_ALU_OUT          = 1'b1;
                             WR_BANCO_REG        = 1'b1;
-                            wrDataMemReg        = 1'b1;
+                            wrDataMemReg        = 1'b0;
                             prox_estado         = read_mem;
                         end
                     end
@@ -212,7 +212,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
 
             read_mem: begin                             // ld passo 2
-                wrDataMemReg        = 1'b0;
+                wrDataMemReg        = 1'b1;
                 SELECT_MUX_DATA     = 1'b1;
                 WR_BANCO_REG        = 1'b1;
                 wrDataMem           = 1'b0;
