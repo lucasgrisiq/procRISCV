@@ -28,7 +28,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     write_reg_mux1,
                     pulaPC,
                     salva_reg,
-                    wrt_reg_lui} Estado, prox_estado;
+                    wrt_reg_lui,
+                    enrolaPC} Estado, prox_estado;
 
     enum bit [2:0] {tipoR, tipoI, tipoS, tipoSB, tipoU, tipoUJ} tipoOP;
 
@@ -48,9 +49,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             7'b0010011: begin                                       //tipo I
                 tipoOP = tipoI;
             end                                          
-            7'b1100111: begin
-                tipoOP = tipoI;
-            end                            
+
             7'b0000011: begin
                 tipoOP = tipoI;
             end 
@@ -173,6 +172,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     end
 
                     tipoSB: begin
+                        prox_estado             = pulaPC;
                         if(INSTRUCAO[14:12] == 3'b000) begin            // beq
                             operacao            = 3'b010;
                             SELETOR_MUX_A       = 2'b01;
@@ -185,7 +185,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                                 prox_estado     = somaPC;
                             end
                         end
-                        else if (INSTRUCAO[14:12] == 3'b111) begin      // bne
+                        else if (INSTRUCAO[14:12] == 3'b001) begin      // bne
                             operacao            = 3'b010;
                             SELETOR_MUX_A       = 2'b01;
                             SELETOR_MUX_B       = 2'b00;
@@ -286,7 +286,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
             pulaPC: begin                                // beq passo 2                  
                 wrDataMemReg        = 1'b0;
-                SELECT_MUX_DATA     = 1'b1;
+                SELECT_MUX_DATA     = 1'b0;
                 WR_BANCO_REG        = 1'b0;
                 wrDataMem           = 1'b0;
                 LOAD_IR             = 1'b0;
@@ -297,7 +297,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 SELETOR_MUX_A       = 2'b00;
                 SELETOR_MUX_B       = 2'b11;
                 WR_ALU_OUT          = 1'b0;
-                prox_estado         = load_reg;
+                prox_estado         = somaPC;
             end
 
 
