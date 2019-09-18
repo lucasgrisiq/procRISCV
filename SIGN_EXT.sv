@@ -10,7 +10,6 @@ module SIGN_EXT (input logic [31:0] ENTRADA,
         
         case (op_code) 
             7'b0010011: begin tipo = tipoI; end
-            7'b1100111: begin tipo = tipoI; end
             7'b0000011: begin tipo = tipoI; end
             7'b1110011: begin tipo = tipoI; end
             7'b0100011: begin tipo = tipoS; end
