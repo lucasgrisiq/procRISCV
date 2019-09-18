@@ -24,14 +24,14 @@ module SIGN_EXT (input logic [31:0] ENTRADA,
             
             tipoI: begin
                 SAIDA[11:0] = ENTRADA[31:20];
-                if (ENTRADA[31:31] == 1) SAIDA[63:12] = 1;
+                if (ENTRADA[31:31] == 1) SAIDA[63:12] = 32'hffffffff;
                 else SAIDA[63:12] = 0;
             end
 
             tipoS: begin
                 SAIDA[4:0] = ENTRADA[11:7];
                 SAIDA[11:5] = ENTRADA[31:25];
-                if (ENTRADA[31] == 1) SAIDA[63:12] = 1;
+                if (ENTRADA[31] == 1) SAIDA[63:12] = 32'hffffffff;
                 else SAIDA[63:12] = 0;
             end
             
@@ -41,7 +41,7 @@ module SIGN_EXT (input logic [31:0] ENTRADA,
                 SAIDA[11] = ENTRADA[7];
                 SAIDA[12] = ENTRADA[31];
                 SAIDA[10:5] = ENTRADA[31:25];
-                if (ENTRADA[31] == 1) SAIDA[63:13] = 1;
+                if (ENTRADA[31] == 1) SAIDA[63:13] = 32'hffffffff;
                 else SAIDA[63:13] = 0;
             end
             
@@ -51,14 +51,14 @@ module SIGN_EXT (input logic [31:0] ENTRADA,
                 SAIDA[11] = ENTRADA[20];
                 SAIDA[19:12] = ENTRADA[19:12];
                 SAIDA[0] = 0;
-                if (ENTRADA[31] == 1) SAIDA[63:21] = 1;
+                if (ENTRADA[31] == 1) SAIDA[63:21] = 32'hffffffff;
                 else SAIDA[63:21] = 0;
             end
             
             tipoU: begin
                 SAIDA[31:12] = ENTRADA[31:12];
                 SAIDA[11:0] = 0;
-                if (ENTRADA[31] == 1) SAIDA[63:32] = 1;
+                if (ENTRADA[31] == 1) SAIDA[63:32] = 32'hffffffff;
                 else SAIDA[63:32] = 0;
             end
         endcase

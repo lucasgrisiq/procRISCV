@@ -1,8 +1,8 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [1:0]     SELETOR_MUX_B;
-    logic           SELETOR_MUX_A, wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA;
+    logic [1:0]     SELETOR_MUX_B, SELETOR_MUX_A;
+    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B;
     logic [2:0]     OPERATION;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
@@ -17,6 +17,7 @@ module UP  (input logic CLK,
                    .regWrite(WRT_PC),
                    .DadoIn(Alu),
                    .DadoOut(PC));
+
     
     Instr_Reg_Risc_V BANCO_INST ( .Instr31_0(INSTR31_0), 
                                   .Clk(CLK),
