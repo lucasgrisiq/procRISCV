@@ -63,8 +63,9 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             7'b1100011: begin                                      // tipo SB
                 tipoOP = tipoSB;
             end                                           
-            7'b1100111: begin                       
-                tipoOP = tipoSB;
+            7'b1100111: begin       
+                if (INSTRUCAO[14:12] == 3'b001) tipoOP = tipoSB;
+                else tipoOP = tipoI;
             end
 
             7'b0110111: begin                                      // tipo U
