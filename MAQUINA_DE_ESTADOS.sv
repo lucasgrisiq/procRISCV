@@ -173,7 +173,6 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     end
 
                     tipoSB: begin
-                        prox_estado             = pulaPC;
                         if(INSTRUCAO[14:12] == 3'b000) begin            // beq
                             operacao            = 3'b010;
                             SELETOR_MUX_A       = 2'b01;
@@ -296,7 +295,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WRITE_PC            = 1'b1;
                 operacao            = 3'b001;
                 SELETOR_MUX_A       = 2'b00;
-                SELETOR_MUX_B       = 2'b11;
+                SELETOR_MUX_B       = 2'b10;
                 WR_ALU_OUT          = 1'b0;
                 prox_estado         = somaPC;
             end

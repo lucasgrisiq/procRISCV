@@ -12,6 +12,10 @@ module SIGN_EXT (input logic [31:0] ENTRADA,
             7'b0010011: begin tipo = tipoI; end
             7'b0000011: begin tipo = tipoI; end
             7'b1110011: begin tipo = tipoI; end
+            7'b1100111: begin       
+                if (ENTRADA[14:12] == 3'b001) tipo = tipoSB;
+                else tipo = tipoI;
+            end
             7'b0100011: begin tipo = tipoS; end
             7'b1100011: begin tipo = tipoSB; end
             7'b1100111: begin tipo = tipoSB; end

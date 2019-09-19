@@ -49,7 +49,7 @@ module UP  (input logic CLK,
                        
     Deslocamento ShiftLeft (.Shift(2'b00),
                             .Entrada(INSTR_EXT),
-                            .N(1'b1),
+                            .N(6'b000001),
                             .Saida(DeslocValue));
 
     MUX_A_ULA MUX_A_ULA (.SELECT(SELETOR_MUX_A),
