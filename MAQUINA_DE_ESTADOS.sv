@@ -16,7 +16,9 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             output logic LOAD_IR, 
                             output logic WR_MEM_INSTR,
                             output logic [1:0] SELETOR_MUX_A,
-                            output logic [1:0] SELETOR_MUX_B);
+                            output logic [1:0] SELETOR_MUX_B,
+                            output logic write_reg_A,
+                            output logic write_reg_B);
     
     enum bit [4:0] {reset, 
                     somaPC, 
@@ -24,7 +26,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     load_reg, 
                     load_AB, 
                     write_reg_alu, 
-                    write_mem, 
+                    write_mem,
                     read_mem, 
                     write_reg_mux1,
                     pulaPC,
@@ -90,6 +92,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
                 prox_estado         = espera;
+                write_reg_A = 1'b1; 
+                write_reg_B = 1'b1; 
             end
 
             somaPC:begin
@@ -105,6 +109,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 SELETOR_MUX_A       = 2'b00;
                 SELETOR_MUX_B       = 2'b01;
                 prox_estado         = load_reg;
+                write_reg_A = 0'b1; 
+                write_reg_B = 0'b1;
             end
             
             espera:begin
@@ -118,6 +124,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
                 prox_estado         = somaPC;
+                write_reg_A = 0'b1; 
+                write_reg_B = 0'b1;
             end
            
             espera_2:begin
@@ -131,15 +139,30 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
                 prox_estado         = read_mem;
+                write_reg_A = 0'b1; 
+                write_reg_B = 0'b1;
             end
 
-           load_reg:begin
+            load_reg: begin
+                operacao            = 3'b001;
+                SELETOR_MUX_A       = 2'b00;
+                SELETOR_MUX_B       = 2'b11;
+                WR_ALU_OUT = 1'b1;
+                write_reg_A = 1'b1; // só é 1 aq
+                write_reg_B = 1'b1; // so é 1 aq
+                prox_estado = check_tipo;
+            end 
+
+            check_tipo :begin
                 wrDataMemReg        = 1'b0;
                 wrDataMem           = 1'b0;
                 LOAD_IR             = 1'b0;
                 WR_MEM_INSTR        = 1'b0;
                 reset_wire          = 1'b0;
                 WRITE_PC            = 1'b0;
+                operacao            = 3'b001;
+                SELETOR_MUX_A       = 2'b00;
+                SELETOR_MUX_B       = 2'b11;
                 case(tipoOP)
                     tipoR: begin
                         SELETOR_MUX_A        = 2'b01;
@@ -152,6 +175,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                         WR_BANCO_REG        = 1'b1;
                         wrDataMemReg        = 1'b0;
                         prox_estado         = write_reg_alu;
+                        write_reg_A = 0'b1; 
+                        write_reg_B = 0'b1;
                     end
 
                     tipoI: begin
@@ -162,6 +187,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             WR_ALU_OUT          = 1'b1;
                             WR_BANCO_REG        = 1'b0;
                             wrDataMemReg        = 1'b0;
+                            write_reg_A = 0'b1; 
+                            write_reg_B = 0'b1;
                             prox_estado         = write_reg_alu;
                         end
                         else if(INSTRUCAO[14:12] == 3'b011) begin            // ld
@@ -171,6 +198,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             WR_ALU_OUT          = 1'b1;
                             WR_BANCO_REG        = 1'b0;
                             wrDataMemReg        = 1'b0;
+                            write_reg_A = 0'b1; 
+                            write_reg_B = 0'b1;
                             prox_estado         = espera_2;
                         end
                     end
@@ -183,6 +212,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             WR_ALU_OUT          = 1'b1;
                             WR_BANCO_REG        = 1'b0;
                             wrDataMemReg        = 1'b0;
+                            write_reg_A = 0'b1; 
+                            write_reg_B = 0'b1;
                             prox_estado         = write_mem;
                         end
                     end
@@ -194,11 +225,12 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             SELETOR_MUX_B       = 2'b00;
                             WR_ALU_OUT          = 1'b0;
                             if(ZERO_ALU) begin
-                                prox_estado     = pulaPC;
+                                SELETOR_ALU = 1'b0;
                             end
                             else begin
-                                prox_estado     = somaPC;
+                                SELETOR_ALU = 1'b1; // seletor ALU tem que ser 1 sempre
                             end
+                                prox_estado     = somaPC;
                         end
                         else if (INSTRUCAO[14:12] == 3'b001) begin      // bne
                             operacao            = 3'b010;
@@ -206,11 +238,12 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             SELETOR_MUX_B       = 2'b00;
                             WR_ALU_OUT          = 1'b0;
                             if(ZERO_ALU) begin
-                                prox_estado     = somaPC;
+                                SELETOR_ALU = 1'b1;
                             end
                             else begin
-                                prox_estado     = pulaPC;
+                                SELETOR_ALU = 1'b0; 
                             end
+                                prox_estado     = somaPC;
                         end
                     end
 
@@ -243,6 +276,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WR_ALU_OUT          = 1'b0;
                 SELETOR_MUX_A       = 2'b00;
                 SELETOR_MUX_B       = 2'b11;
+                write_reg_A         = 0'b1; 
+                write_reg_B         = 0'b1;
                 prox_estado         = espera;
             end
 
@@ -256,6 +291,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 reset_wire          = 1'b0;
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
+                write_reg_A         = 0'b1; 
+                write_reg_B         = 0'b1;
                 prox_estado         = espera;
             end
 
@@ -270,6 +307,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 reset_wire          = 1'b0;
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
+                write_reg_A         = 0'b1; 
+                write_reg_B         = 0'b1;
                 prox_estado         = salva_reg;
             end
 
@@ -283,6 +322,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 reset_wire          = 1'b0;
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
+                write_reg_A         = 0'b1; 
+                write_reg_B         = 0'b1;
                 prox_estado         = espera;
             end
 
@@ -296,6 +337,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 reset_wire          = 1'b0;
                 WRITE_PC            = 1'b0;
                 WR_ALU_OUT          = 1'b0;
+                write_reg_A         = 0'b1; 
+                write_reg_B         = 0'b1;
                 prox_estado         = espera;
             end
 
@@ -312,6 +355,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 SELETOR_MUX_A       = 2'b00;
                 SELETOR_MUX_B       = 2'b11;
                 WR_ALU_OUT          = 1'b0;
+                write_reg_A         = 0'b1; 
+                write_reg_B         = 0'b1;
                 prox_estado         = somaPC;
             end
 

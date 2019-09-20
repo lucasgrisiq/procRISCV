@@ -17,7 +17,18 @@ module UP  (input logic CLK,
                    .regWrite(WRT_PC),
                    .DadoIn(Alu),
                    .DadoOut(PC));
+   
+    register A (.clk(CLK),
+                .reset(RST),
+                .regWrite(WRITE_REG_A)
+                .DadoIn(A)
+                .DadoOut(A_OUT));
 
+    register B (.clk(CLK),
+                .reset(RST),
+                .regWrite(WRITE_REG_B)
+                .DadoIn(B)
+                .DadoOut(B_OUT));
     
     Instr_Reg_Risc_V BANCO_INST ( .Instr31_0(INSTR31_0), 
                                   .Clk(CLK),
@@ -53,7 +64,7 @@ module UP  (input logic CLK,
                             .Saida(DeslocValue));
 
     MUX_A_ULA MUX_A_ULA (.SELECT(SELETOR_MUX_A),
-                         .A(A),
+                         .A(A_OUT),
                          .PC(PC),
                          .SAIDA(SAIDA_MUX_A));
 
@@ -101,7 +112,7 @@ module UP  (input logic CLK,
     Memoria64 MEM_DATA (.raddress(AluOut),
                         .waddress(AluOut),
                         .Clk(CLK),
-                        .Datain(B),
+                        .Datain(B_OUT),
                         .Dataout(SAIDA_MEM_64),
                         .Wr(wrDataMem));
     
@@ -122,6 +133,8 @@ module UP  (input logic CLK,
                               .SELETOR_MUX_A(SELETOR_MUX_A),
                               .SELETOR_MUX_B(SELETOR_MUX_B),
                               .ZERO_ALU(ZERO),
-                              .IGUAL_ALU(ALU));
+                              .IGUAL_ALU(ALU),
+                              .write_reg_A(WRITE_REG_A),
+                              .write_reg_B(WRITE_REG_B));
 
 endmodule
