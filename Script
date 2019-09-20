@@ -21,7 +21,8 @@ add wave -position end  sim:/Simulation/processing/wrDataMemReg
 add wave -position end -radix decimal sim:/Simulation/processing/PC
 add wave -position end  sim:/Simulation/processing/FONTE/tipoOP
 add wave -position end  sim:/Simulation/processing/FONTE/Estado
-
+add wave -position end  -radix decimal sim:/Simulation/processing/BANCO_INST/Instr11_7
+add wave -position 12  -radix decimal sim:/Simulation/processing/BANCO_REG/datain
 
 run 100 ns
 

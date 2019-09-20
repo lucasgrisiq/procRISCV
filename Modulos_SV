@@ -13,3 +13,4 @@ MUX_A_ULA.sv
 Deslocamento.sv
 bancoReg.sv
 MUX_DATA_REG.sv
+MUX_ALU_ALUOUT.sv

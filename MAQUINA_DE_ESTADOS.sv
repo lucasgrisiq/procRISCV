@@ -4,6 +4,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             input logic [6:0] op_code,
                             input logic ZERO_ALU,
                             input logic IGUAL_ALU,
+                            output logic SELETOR_ALU,
                             output logic WR_BANCO_REG,
                             output logic SELECT_MUX_DATA,
                             output logic wrDataMemReg,
@@ -29,7 +30,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     pulaPC,
                     salva_reg,
                     wrt_reg_lui,
-                    enrolaPC} Estado, prox_estado;
+                    enrolaPC,
+                    espera_2} Estado, prox_estado;
 
     enum bit [2:0] {tipoR, tipoI, tipoS, tipoSB, tipoU, tipoUJ} tipoOP;
 
@@ -118,6 +120,19 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 prox_estado         = somaPC;
             end
            
+            espera_2:begin
+                wrDataMemReg        = 1'b0;
+                wrDataMem           = 1'b0;
+                WR_BANCO_REG        = 1'b0;
+                LOAD_IR             = 1'b0;
+                WR_MEM_INSTR        = 1'b0;
+                reset_wire          = 1'b0;
+                operacao            = 3'b000;
+                WRITE_PC            = 1'b0;
+                WR_ALU_OUT          = 1'b0;
+                prox_estado         = read_mem;
+            end
+
            load_reg:begin
                 wrDataMemReg        = 1'b0;
                 wrDataMem           = 1'b0;
@@ -156,7 +171,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             WR_ALU_OUT          = 1'b1;
                             WR_BANCO_REG        = 1'b0;
                             wrDataMemReg        = 1'b0;
-                            prox_estado         = read_mem;
+                            prox_estado         = espera_2;
                         end
                     end
 

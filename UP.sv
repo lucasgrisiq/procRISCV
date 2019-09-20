@@ -8,9 +8,9 @@ module UP  (input logic CLK,
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
     logic [6:0]     OP_CODE;
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
-    logic           wrInstMem, IRWrite;
+    logic           wrInstMem, IRWrite,Seletor_Alu;
     logic            WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
-    logic [63:0]     Alu, PC, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64;                 //Declaracao dos fios de 64bits
+    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64;                 //Declaracao dos fios de 64bits
     
     register PCreg (.clk(CLK),
                    .reset(RST),
@@ -68,6 +68,10 @@ module UP  (input logic CLK,
                                .SELECT(SELECT_MUX_DATA),
                                .SAIDA(WriteDataReg));
 
+    MUX_ALU_ALUOUT MUX_SAIDA_ALU (.SELETOR(Seletor_Alu),
+                                  .ALU_OUT(AluOut),
+                                  .ALU(Alu),
+                                  .SAIDA(SAIDA_MUX_ALU));        
 
     bancoReg BANCO_REG (.write(RegWrite_banco),
                         .clock(CLK),
