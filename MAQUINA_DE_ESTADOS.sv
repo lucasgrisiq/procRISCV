@@ -295,7 +295,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WRITE_PC            = 1'b1;
                 operacao            = 3'b001;
                 SELETOR_MUX_A       = 2'b00;
-                SELETOR_MUX_B       = 2'b10;
+                SELETOR_MUX_B       = 2'b11;
                 WR_ALU_OUT          = 1'b0;
                 prox_estado         = somaPC;
             end

@@ -92,6 +92,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 Top level modules:
 	MUX_B_ULA
 
+} {} {}} C:/Users/lgoq/Desktop/procRISCV/register.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/procRISCV/register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module register
+
+Top level modules:
+	register
+
 } {} {}} C:/Users/lgoq/Desktop/procRISCV/Simulation.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/procRISCV/Simulation.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module Simulation
@@ -99,11 +106,11 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 2
 Top level modules:
 	Simulation
 
-} {} {}} C:/Users/lgoq/Desktop/procRISCV/register.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/procRISCV/register.sv
+} {} {}} C:/Users/lgoq/Desktop/procRISCV/UP.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Desktop/procRISCV/UP.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module register
+-- Compiling module UP
 
 Top level modules:
-	register
+	UP
 
 } {} {}}
