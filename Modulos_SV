@@ -14,3 +14,4 @@ Deslocamento.sv
 bancoReg.sv
 MUX_DATA_REG.sv
 MUX_ALU_ALUOUT.sv
+SIGN_EXT_2.sv

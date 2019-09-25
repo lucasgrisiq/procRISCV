@@ -3,7 +3,7 @@ module UP  (input logic CLK,
     
     logic [1:0]     SELETOR_MUX_B, SELETOR_MUX_A;
     logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA, WRITE_REG_A, WRITE_REG_B;
-    logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B;
+    logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
     logic [2:0]     OPERATION;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
     logic [6:0]     OP_CODE;
@@ -42,6 +42,9 @@ module UP  (input logic CLK,
 
     //variaveis da ULA
 
+    SIGN_EXT_2 Extensor (.ENTRADA(B_OUT),
+                         .SAIDA(SAIDA_EXTENSOR));
+
     register Alu_Out (.clk(CLK),
                      .reset(RST),
                      .regWrite(WR_ALU_OUT),
@@ -72,6 +75,7 @@ module UP  (input logic CLK,
                          .B(B_OUT),
                          .S_EXT(INSTR_EXT),
                          .S_EXT_SH_LEFT(DeslocValue),
+                         .EXTENSOR(SAIDA_EXTENSOR),
                          .SAIDA(SAIDA_MUX_B));
 
     MUX_DATA_REG MUX_DATA_REG2 (.MEM_DATA_REG(MEM_REGISTER64),
