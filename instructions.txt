@@ -1,7 +1,7 @@
 addi x1,x0,13
 sd x1,0(x0)
 ld x2,0(x0)
-beq x1,x2,2
+bne x1,x0,2
 break
 break
 addi x4,x0,1    

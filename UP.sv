@@ -2,7 +2,7 @@ module UP  (input logic CLK,
             input logic RST);
     
     logic [1:0]     SELETOR_MUX_B, SELETOR_MUX_A;
-    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA;
+    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA, WRITE_REG_A, WRITE_REG_B;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B;
     logic [2:0]     OPERATION;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
@@ -10,24 +10,24 @@ module UP  (input logic CLK,
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
     logic           wrInstMem, IRWrite,Seletor_Alu;
     logic            WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
-    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64;                 //Declaracao dos fios de 64bits
+    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT;                 //Declaracao dos fios de 64bits
     
     register PCreg (.clk(CLK),
                    .reset(RST),
                    .regWrite(WRT_PC),
-                   .DadoIn(Alu),
+                   .DadoIn(SAIDA_MUX_ALU),
                    .DadoOut(PC));
    
-    register A (.clk(CLK),
+    register Areg (.clk(CLK),
                 .reset(RST),
-                .regWrite(WRITE_REG_A)
-                .DadoIn(A)
+                .regWrite(WRITE_REG_A),
+                .DadoIn(A),
                 .DadoOut(A_OUT));
 
-    register B (.clk(CLK),
+    register Breg (.clk(CLK),
                 .reset(RST),
-                .regWrite(WRITE_REG_B)
-                .DadoIn(B)
+                .regWrite(WRITE_REG_B),
+                .DadoIn(B),
                 .DadoOut(B_OUT));
     
     Instr_Reg_Risc_V BANCO_INST ( .Instr31_0(INSTR31_0), 
@@ -69,7 +69,7 @@ module UP  (input logic CLK,
                          .SAIDA(SAIDA_MUX_A));
 
     MUX_B_ULA MUX_B_ULA (.SELECT(SELETOR_MUX_B),
-                         .B(B),
+                         .B(B_OUT),
                          .S_EXT(INSTR_EXT),
                          .S_EXT_SH_LEFT(DeslocValue),
                          .SAIDA(SAIDA_MUX_B));
@@ -135,6 +135,7 @@ module UP  (input logic CLK,
                               .ZERO_ALU(ZERO),
                               .IGUAL_ALU(ALU),
                               .write_reg_A(WRITE_REG_A),
-                              .write_reg_B(WRITE_REG_B));
+                              .write_reg_B(WRITE_REG_B),
+                              .SELETOR_ALU(Seletor_Alu));
 
 endmodule

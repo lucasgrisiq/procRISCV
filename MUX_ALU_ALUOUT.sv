@@ -1,4 +1,4 @@
-module MUX_ALU_ALUOUT(output logic [1:0] SELETOR,
+module MUX_ALU_ALUOUT(input logic SELETOR,
                  input logic [63:0] ALU_OUT,
                  input logic [63:0] ALU,
                  output logic [63:0] SAIDA);

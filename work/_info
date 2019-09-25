@@ -7,10 +7,10 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/lgoq/Desktop/procRISCV
+Z0 dC:/Users/lgoq/Documents/procRISCV
 vbancoReg
 Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z2 !s110 1569002055
+Z2 !s110 1569440568
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
 I`MOnE05dQ1@`[Y_O[A[=11
@@ -18,7 +18,7 @@ Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 bancoReg_sv_unit
 S1
 R0
-Z4 w1568995934
+Z4 w1569434953
 8bancoReg.sv
 FbancoReg.sv
 L0 1
@@ -26,7 +26,7 @@ Z5 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1569002054.000000
+Z6 !s108 1569440568.000000
 Z7 !s107 MUX_ALU_ALUOUT.sv|MUX_DATA_REG.sv|bancoReg.sv|Deslocamento.sv|MUX_A_ULA.sv|MUX_B_ULA.sv|SIGN_EXT.sv|ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
 Z8 !s90 -reportprogress|300|-f|Modulos_SV|
 !i113 1
@@ -71,11 +71,11 @@ Z14 OV;C;10.6d;65
 32
 R2
 !i10b 1
-Z15 !s108 1569002055.000000
-Z16 !s90 -reportprogress|300|-f|Modulos_VHD|
+R6
+Z15 !s90 -reportprogress|300|-f|Modulos_VHD|
 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
-Z17 tExplicit 1 CvgOpt 0
+Z16 tExplicit 1 CvgOpt 0
 Abehavioral_arch
 R10
 R11
@@ -88,22 +88,22 @@ R14
 32
 R2
 !i10b 1
+R6
 R15
-R16
-Z18 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
+Z17 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
-R17
+R16
 vMAQUINA_DE_ESTADOS
 R1
 R2
 !i10b 1
-!s100 @hDAU7LL_d[GK^KzJ0Fl40
-IQ0I`E_n35RL0G2dONaWoI0
+!s100 T;haQP^GDOVLNg_WR^KeB0
+I=2W]7cMMEl^@XV=adQ4oH0
 R3
 !s105 MAQUINA_DE_ESTADOS_sv_unit
 S1
 R0
-w1569001875
+w1569440370
 8MAQUINA_DE_ESTADOS.sv
 FMAQUINA_DE_ESTADOS.sv
 L0 1
@@ -130,7 +130,7 @@ R0
 R4
 8Memoria32.sv
 FMemoria32.sv
-Z19 L0 26
+Z18 L0 26
 R5
 r1
 !s85 0
@@ -154,7 +154,7 @@ R0
 R4
 8Memoria64.sv
 FMemoria64.sv
-R19
+R18
 R5
 r1
 !s85 0
@@ -193,13 +193,13 @@ vMUX_ALU_ALUOUT
 R1
 R2
 !i10b 1
-!s100 <o`3?MZIZl3W_><o;h5U92
-If`03@S^ZeMk8=THA<=:;S1
+!s100 O>e92=TJjE:ha?S]KiMea3
+IG<lP0366^DgWE0D_?oDUa3
 R3
 !s105 MUX_ALU_ALUOUT_sv_unit
 S1
 R0
-w1569002045
+w1569439786
 8MUX_ALU_ALUOUT.sv
 FMUX_ALU_ALUOUT.sv
 L0 1
@@ -271,7 +271,7 @@ R0
 R4
 8ramOnChip32.v
 FramOnChip32.v
-Z20 L0 40
+Z19 L0 40
 R5
 r1
 !s85 0
@@ -292,7 +292,7 @@ R0
 R4
 8ramOnChip64.v
 FramOnChip64.v
-R20
+R19
 R5
 r1
 !s85 0
@@ -400,12 +400,12 @@ R9
 n@state_machine
 Eula64
 R4
-Z21 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z20 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R10
 R11
 R0
-Z22 8ula64.vhd
-Z23 Fula64.vhd
+Z21 8ula64.vhd
+Z22 Fula64.vhd
 l0
 L54
 VA[hKfbX3SC@81eT`QAGTa0
@@ -414,13 +414,13 @@ R14
 32
 R2
 !i10b 1
+R6
 R15
-R16
-R18
-!i113 1
 R17
+!i113 1
+R16
 Abehavioral
-R21
+R20
 R10
 R11
 DEx4 work 5 ula64 0 22 A[hKfbX3SC@81eT`QAGTa0
@@ -432,22 +432,22 @@ R14
 32
 R2
 !i10b 1
+R6
 R15
-R16
-R18
-!i113 1
 R17
+!i113 1
+R16
 vUP
 R1
 R2
 !i10b 1
-!s100 [dk?@n3;n]0CI^ELUHf2h0
-I6So2gI7338R=^a?dAT>SS0
+!s100 ?5AY8>K`BC]bIWU<X`EMB2
+IHH1@hhamA<c]WPMo=DX7_2
 R3
 !s105 UP_sv_unit
 S1
 R0
-w1569001827
+w1569436459
 8UP.sv
 FUP.sv
 L0 1

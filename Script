@@ -23,6 +23,7 @@ add wave -position end  sim:/Simulation/processing/FONTE/tipoOP
 add wave -position end  sim:/Simulation/processing/FONTE/Estado
 add wave -position end  -radix decimal sim:/Simulation/processing/BANCO_INST/Instr11_7
 add wave -position 12  -radix decimal sim:/Simulation/processing/BANCO_REG/datain
+add wave -position end -radix decimal sim:/Simulation/processing/MUX_SAIDA_ALU/SAIDA
 
 run 100 ns
 
