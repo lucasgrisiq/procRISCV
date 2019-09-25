@@ -10,7 +10,7 @@ cModel Technology
 Z0 dC:/Users/lgoq/Documents/procRISCV
 vbancoReg
 Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z2 !s110 1569443991
+Z2 !s110 1569445855
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
 I`MOnE05dQ1@`[Y_O[A[=11
@@ -26,7 +26,7 @@ Z5 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1569443991.000000
+Z6 !s108 1569445855.000000
 Z7 !s107 MUX_ALU_ALUOUT.sv|MUX_DATA_REG.sv|bancoReg.sv|Deslocamento.sv|MUX_A_ULA.sv|MUX_B_ULA.sv|SIGN_EXT.sv|ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
 Z8 !s90 -reportprogress|300|-f|Modulos_SV|
 !i113 1
@@ -97,13 +97,13 @@ vMAQUINA_DE_ESTADOS
 R1
 R2
 !i10b 1
-!s100 ;^WF8<n6U9mFMOFBB5lSO2
-IY7Lh4Z;g7iLBjcYF;k`iM0
+!s100 iZ3]2BJPmK2>N7bhJm<f@3
+IOBjC[d80GAf1N9iiNHJ`z2
 R3
 !s105 MAQUINA_DE_ESTADOS_sv_unit
 S1
 R0
-w1569443906
+w1569445769
 8MAQUINA_DE_ESTADOS.sv
 FMAQUINA_DE_ESTADOS.sv
 L0 1
@@ -241,13 +241,13 @@ vMUX_DATA_REG
 R1
 R2
 !i10b 1
-!s100 ic6Xm8=53MRoFFDkLP0zf1
-IDLPFbVV3c9^T4Sa_BOkLn2
+!s100 f0;LD`[3KPobz3NnT[A0?1
+IO4_RW?VKB>mBBMR8T8bgj0
 R3
 !s105 MUX_DATA_REG_sv_unit
 S1
 R0
-w1569443407
+w1569445108
 8MUX_DATA_REG.sv
 FMUX_DATA_REG.sv
 L0 1

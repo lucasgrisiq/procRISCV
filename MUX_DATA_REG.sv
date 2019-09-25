@@ -10,7 +10,7 @@ module MUX_DATA_REG (input logic [63:0] MEM_DATA_REG,
         else if(SELECT == 2'b01)
             SAIDA = MEM_DATA_REG;
         
-        else if(SELECT == 2'b01)
+        else if(SELECT == 2'b10)
             SAIDA = 64'h0001;
         
         else 
