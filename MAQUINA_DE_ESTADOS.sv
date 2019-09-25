@@ -21,7 +21,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             output logic write_reg_A,
                             output logic write_reg_B);
     
-    enum bit [4:0] {reset, 
+    enum bit [4:0] {reset,                          // Valores que Estado e prox_estado podem receber
                     somaPC, 
                     espera, 
                     load_reg, 
@@ -50,12 +50,12 @@ module MAQUINA_DE_ESTADOS  (input CLK,
     
     always_comb begin
         case(op_code) 
-            7'b0110011: begin                                       // tipo R
+            7'b0110011: begin                        // Instruções do Tipo R
                 tipoOP = tipoR;
                  
             end
 
-            7'b0010011: begin                                       //tipo I
+            7'b0010011: begin                        //tipo I
                 tipoOP = tipoI;
             end                                          
 
@@ -65,11 +65,11 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             7'b1110011: begin
                 tipoOP = tipoI;
             end
-            7'b0100011: begin                                      // tipo S
+            7'b0100011: begin                        // tipo S
                 tipoOP = tipoS;
             end 
 
-            7'b1100011: begin                                      // tipo SB
+            7'b1100011: begin                        // tipo SB
                 tipoOP = tipoSB;
             end                                           
             7'b1100111: begin       
@@ -77,52 +77,53 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 else tipoOP = tipoI;
             end
 
-            7'b0110111: begin                                      // tipo U
+            7'b0110111: begin                        // tipo U
                 tipoOP = tipoU;
             end
 
-            7'b1101111: begin                                      // tipo UJ
+            7'b1101111: begin                        // tipo UJ
                 tipoOP = tipoUJ;
             end
         endcase
+
         case(Estado)
             reset:begin
-                wrDataMemReg        = 1'b0;
-                wrDataMem           = 1'b0;
-                WR_BANCO_REG        = 1'b0;
-                LOAD_IR             = 1'b0;
-                WR_MEM_INSTR        = 1'b0;
-                reset_wire          = 1'b1;
-                operacao            = 3'b000;
-                WRITE_PC            = 1'b0;
-                WR_ALU_OUT          = 1'b0;
-                SELETOR_ALU         = 1'b1;
-                prox_estado         = espera;
-                write_reg_A         = 1'b0; 
-                write_reg_B         = 1'b0; 
+                wrDataMemReg        = 1'b0;         // Escrever no registrador de memória
+                wrDataMem           = 1'b0;         // Escrever na memória
+                WR_BANCO_REG        = 1'b0;         // Escrever no banco de registradores
+                LOAD_IR             = 1'b0;         // Ler instrução da memória
+                WR_MEM_INSTR        = 1'b0;         // Escrever instrução na memória
+                reset_wire          = 1'b1;         // Resetar
+                operacao            = 3'b000;       // Operação == não fazer nada
+                WRITE_PC            = 1'b0;         // Atualizar PC (Reescrever o PC)
+                WR_ALU_OUT          = 1'b0;         // Escrever na Alu_out
+                SELETOR_ALU         = 1'b1;         // Selecionar entre Alu_out e PC+4
+                prox_estado         = espera;       // Qual o próximo estado a ser executado no próximo clock
+                write_reg_A         = 1'b0;         // Escrever no registrador A
+                write_reg_B         = 1'b0;         // ******                  B
             end
 
             somaPC:begin
-                wrDataMemReg        = 1'b0;
-                wrDataMem           = 1'b0;
-                WR_BANCO_REG        = 1'b0;
-                LOAD_IR             = 1'b1;
-                WR_MEM_INSTR        = 1'b0;
-                reset_wire          = 1'b0;
-                operacao            = 3'b001;
-                WRITE_PC            = 1'b1;
-                WR_ALU_OUT          = 1'b0;
-                SELETOR_MUX_A       = 2'b00;
-                SELETOR_MUX_B       = 3'b001;
+                wrDataMemReg        = 1'b0;         // Escrever no registrador de memória
+                wrDataMem           = 1'b0;         // Escrever na memória
+                WR_BANCO_REG        = 1'b0;         // Escrever no banco de registradores
+                LOAD_IR             = 1'b1;         // Ler instrução da memória
+                WR_MEM_INSTR        = 1'b0;         // Escrever instrução na memória
+                reset_wire          = 1'b0;         // Resetar
+                operacao            = 3'b001;       // Operação == soma
+                WRITE_PC            = 1'b1;         // Atualizar PC (Reescrever o PC)
+                WR_ALU_OUT          = 1'b0;         // Escrever na Alu_Out
+                SELETOR_MUX_A       = 2'b00;        // Seletor de valor do MUX_A
+                SELETOR_MUX_B       = 3'b001;       // Seletor de valor do MUX_B
                 prox_estado         = load_reg;
-                write_reg_A         = 1'b0; 
-                write_reg_B         = 1'b0;
+                write_reg_A         = 1'b0;         // Escrever no Registrador A
+                write_reg_B         = 1'b0;         // Escrever no registrador B
             end
             
             espera:begin
-                wrDataMemReg        = 1'b0;
-                wrDataMem           = 1'b0;
-                WR_BANCO_REG        = 1'b0;
+                wrDataMemReg        = 1'b0;         // Escrever no registrador de memória
+                wrDataMem           = 1'b0;         // Escrever na memória
+                WR_BANCO_REG        = 1'b0;         // Escrever no banco de registradores
                 LOAD_IR             = 1'b0;
                 WR_MEM_INSTR        = 1'b0;
                 reset_wire          = 1'b0;
@@ -206,15 +207,17 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             //Operação == Jarl
                             // rd = PC
                             // PC = (rs1 + imm)*
-                            operacao                = 3'b001;
-                            SELETOR_MUX_A           = 2'b01;
-                            SELETOR_MUX_B           = 3'b010;
-                            WR_ALU_OUT              = 1'b1;
+                            operacao                = 3'b001; // Operação de soma
+                            SELETOR_MUX_A           = 2'b01;  // Valor de A
+                            SELETOR_MUX_B           = 3'b100; // Saída extendida
+                            WR_ALU_OUT              = 1'b1;   // Flag pra escrever na alu_Out
 
                         end
 
                         else begin
                             if(INSTRUCAO[14:12] == 3'b000) begin            // addi
+                            // addi = rs1 + imm
+                            //
                                 operacao            = 3'b001;
                                 SELETOR_MUX_A       = 2'b01;
                                 SELETOR_MUX_B       = 3'b010;
