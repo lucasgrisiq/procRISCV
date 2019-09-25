@@ -1,8 +1,8 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [1:0]     SELETOR_MUX_B, SELETOR_MUX_A;
-    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA, WRITE_REG_A, WRITE_REG_B;
+    logic [1:0]     SELETOR_MUX_B, SELETOR_MUX_A,SELECT_MUX_DATA;
+    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
     logic [2:0]     OPERATION;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
@@ -103,7 +103,8 @@ module UP  (input logic CLK,
                 .S(Alu),
                 .Seletor(OPERATION),
                 .Igual(IGUAL),
-                .z(ZERO));
+                .z(ZERO),
+                .Menor(MENOR_ALU));
     
     Memoria32 MEM_32_INSTRUCTIONS ( .Clk(CLK),
                                     .raddress(PC),
@@ -140,6 +141,7 @@ module UP  (input logic CLK,
                               .IGUAL_ALU(ALU),
                               .write_reg_A(WRITE_REG_A),
                               .write_reg_B(WRITE_REG_B),
-                              .SELETOR_ALU(Seletor_Alu));
+                              .SELETOR_ALU(Seletor_Alu),
+                              .MENOR_ALU(MENOR_ALU));
 
 endmodule
