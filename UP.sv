@@ -4,7 +4,8 @@ module UP  (input logic CLK,
     logic [1:0]     SELETOR_MUX_A;
     logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
-    logic [2:0]     OPERATION, SELECT_MUX_DATA, SELETOR_MUX_B;
+    logic [2:0]     OPERATION, SELETOR_MUX_B;
+    logic [3:0]     SELECT_MUX_DATA;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
     logic [6:0]     OP_CODE;
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
