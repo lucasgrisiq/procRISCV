@@ -1,10 +1,10 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [1:0]     SELETOR_MUX_B, SELETOR_MUX_A,SELECT_MUX_DATA;
-    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, SELECT_MUX_DATA, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
+    logic [1:0]     SELETOR_MUX_A;
+    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
-    logic [2:0]     OPERATION;
+    logic [2:0]     OPERATION, SELECT_MUX_DATA, SELETOR_MUX_B;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
     logic [6:0]     OP_CODE;
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
@@ -79,9 +79,10 @@ module UP  (input logic CLK,
                          .SAIDA(SAIDA_MUX_B));
 
     MUX_DATA_REG MUX_DATA_REG2 (.MEM_DATA_REG(MEM_REGISTER64),
-                               .ALU_OUT(AluOut),
-                               .SELECT(SELECT_MUX_DATA),
-                               .SAIDA(WriteDataReg));
+                                .ALU_OUT(AluOut),
+                                .PC(PC),
+                                .SELECT(SELECT_MUX_DATA),
+                                .SAIDA(WriteDataReg));
 
     MUX_ALU_ALUOUT MUX_SAIDA_ALU (.SELETOR(Seletor_Alu),
                                   .ALU_OUT(AluOut),
