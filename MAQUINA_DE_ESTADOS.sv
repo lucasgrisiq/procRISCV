@@ -54,12 +54,12 @@ module MAQUINA_DE_ESTADOS  (input CLK,
     always_comb begin
         case(op_code) 
             7'b0110011: begin                        // Instruções do Tipo R
-                tipoOP              = tipoR;
+                tipoOP = tipoR;
                  
             end
 
             7'b0010011: begin                        //tipo I
-                tipoOP              = tipoI;
+                tipoOP = tipoI;
             end                                          
 
             7'b0000011: begin
@@ -73,26 +73,26 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 else if(INSTRUCAO[14:12] == 3'b110) tipoLoad = lwu;
             end 
             7'b1110011: begin
-                tipoOP              = tipoI;
+                tipoOP = tipoI;
             end
             7'b0100011: begin                        // tipo S
-                tipoOP              = tipoS;
+                tipoOP = tipoS;
             end 
 
             7'b1100011: begin                        // tipo SB
-                tipoOP              = tipoSB;
+                tipoOP = tipoSB;
             end                                           
-            7'b1100111: begin                       // tipo SB
+            7'b1100111: begin       
                 if (INSTRUCAO[14:12] == 3'b001) tipoOP = tipoSB;
-                else tipoOP         = tipoI;        // tipo I
+                else tipoOP = tipoI;
             end
 
             7'b0110111: begin                        // tipo U
-                tipoOP              = tipoU;
+                tipoOP = tipoU;
             end
 
             7'b1101111: begin                        // tipo UJ
-                tipoOP              = tipoUJ;
+                tipoOP = tipoUJ;
             end
         endcase
 
@@ -108,9 +108,9 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WRITE_PC            = 1'b0;         // Atualizar PC (Reescrever o PC)
                 WR_ALU_OUT          = 1'b0;         // Escrever na Alu_out
                 SELETOR_ALU         = 1'b1;         // Selecionar entre Alu_out e PC+4
+                prox_estado         = espera;       // Qual o próximo estado a ser executado no próximo clock
                 write_reg_A         = 1'b0;         // Escrever no registrador A
                 write_reg_B         = 1'b0;         // ******                  B
-                prox_estado         = espera;       // Qual o próximo estado a ser executado no próximo clock
             end
 
             somaPC:begin
@@ -195,11 +195,11 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                         SELETOR_MUX_A        = 2'b01;
                         SELETOR_MUX_B        = 3'b000;
                         WR_ALU_OUT          = 1'b1;
-                        if(INSTRUCAO[31:25] == 7'b0000000) begin                            // add
-                            if(INSTRUCAO[14:12] == 3'b000) operacao = 3'b001;
+                        if(INSTRUCAO[31:25] == 7'b0000000) begin                            
+                            if(INSTRUCAO[14:12] == 3'b000) operacao = 3'b001;               // add
                             else if(INSTRUCAO[14:12] == 3'b111) operacao = 3'b011;          // and
                             else if(INSTRUCAO[14:12] == 3'b010) begin 
-                                operacao = 3'b110;
+                                operacao = 3'b110;                                          // slt
                                 if(MENOR_ALU) prox_estado = wrt_1_reg;
                                 else prox_estado = wrt_0_reg;
                             end
@@ -213,14 +213,13 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     end
 
                     tipoI: begin
-                        if (op_code == 7'b1100111)begin
-                            //Operação == Jarl
+                        if (op_code == 7'b1100111)begin                                     // jarl
                             // rd = PC
                             // PC = (rs1 + imm)*
-                            operacao                = 3'b001;               // Operação de soma
-                            SELETOR_MUX_A           = 2'b01;                // Valor de A
-                            SELETOR_MUX_B           = 3'b010;               // Saída extendida
-                            WR_ALU_OUT              = 1'b1;                 // Flag pra escrever na alu_Out
+                            operacao                = 3'b001; // Operação de soma
+                            SELETOR_MUX_A           = 2'b01;  // Valor de A
+                            SELETOR_MUX_B           = 3'b010; // Saída extendida
+                            WR_ALU_OUT              = 1'b1;   // Flag pra escrever na alu_Out
                             prox_estado             = recebe_pc_wrt_pc;
                         end
 
