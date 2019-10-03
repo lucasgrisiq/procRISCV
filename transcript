@@ -1,51 +1,29 @@
 # Compile of bancoReg.sv was successful.
 # Compile of Deslocamento.sv was successful.
 # Compile of Instr_Reg_Risc_V.vhd was successful.
-# Compile of MAQUINA_DE_ESTADOS.sv failed with 5 errors.
+# Compile of MAQUINA_DE_ESTADOS.sv was successful.
 # Compile of Memoria32.sv was successful.
 # Compile of Memoria64.sv was successful.
 # Compile of MUX_A_ULA.sv was successful.
 # Compile of MUX_ALU_ALUOUT.sv was successful.
 # Compile of MUX_B_ULA.sv was successful.
-# Compile of MUX_DATA_REG.sv was successful.
-# Compile of MUX_WRT_DATA.sv failed with 3 errors.
+# Compile of MUX_DATA_REG.sv was successful with warnings.
+# Compile of MUX_WRT_DATA.sv was successful.
 # Compile of Processador.sv was successful.
 # Compile of ramOnChip32.v was successful.
 # Compile of ramOnChip64.v was successful.
 # Compile of register.sv was successful.
 # Compile of SIGN_EXT.sv was successful.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
+# Compile of SIGN_EXT_2.sv was successful.
 # Compile of Simulation.sv was successful.
 # Compile of ula64.vhd was successful.
-# Compile of UP.sv failed with 1 errors.
-# 20 compiles, 4 failed with 11 errors.
-# Compile of MAQUINA_DE_ESTADOS.sv was successful.
-# Compile of MUX_WRT_DATA.sv was successful.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of UP.sv failed with 1 errors.
-# 4 compiles, 2 failed with 3 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of UP.sv failed with 1 errors.
-# 2 compiles, 2 failed with 3 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of UP.sv failed with 1 errors.
-# 2 compiles, 2 failed with 3 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of UP.sv failed with 1 errors.
-# 2 compiles, 2 failed with 3 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of UP.sv failed with 1 errors.
-# 2 compiles, 2 failed with 3 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
 # Compile of UP.sv was successful.
-# 2 compiles, 1 failed with 2 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of SIGN_EXT_2.sv failed with 2 errors.
-# Compile of SIGN_EXT_2.sv was successful.
-do Script
+# 20 compiles, 0 failed with no errors.
+# Load canceled
+do script
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 16:20:11 on Oct 02,2019
+# Start time: 16:34:13 on Oct 03,2019
 # vlog -reportprogress 300 -f Modulos_SV 
 # -- Compiling module MAQUINA_DE_ESTADOS
 # -- Compiling module State_machine
@@ -62,6 +40,9 @@ do Script
 # -- Compiling module Deslocamento
 # -- Compiling module bancoReg
 # -- Compiling module MUX_DATA_REG
+# ** Warning: MUX_DATA_REG.sv(34): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: MUX_DATA_REG.sv(35): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# ** Warning: MUX_DATA_REG.sv(47): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # -- Compiling module MUX_ALU_ALUOUT
 # -- Compiling module SIGN_EXT_2
 # -- Compiling module MUX_WRT_DATA
@@ -70,10 +51,10 @@ do Script
 # 	State_machine
 # 	Simulation
 # 	MUX_WRT_DATA
-# End time: 16:20:11 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 16:34:14 on Oct 03,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 3
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 16:20:11 on Oct 02,2019
+# Start time: 16:34:14 on Oct 03,2019
 # vcom -reportprogress 300 -f Modulos_VHD 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -83,10 +64,10 @@ do Script
 # -- Compiling architecture behavioral of Ula64
 # -- Compiling entity Instr_Reg_RISC_V
 # -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-# End time: 16:20:12 on Oct 02,2019, Elapsed time: 0:00:01
+# End time: 16:34:14 on Oct 03,2019, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -L altera_mf_ver -gui work.Simulation 
-# Start time: 16:20:12 on Oct 02,2019
+# Start time: 16:34:14 on Oct 03,2019
 # Loading sv_std.std
 # Loading work.Simulation
 # Loading work.UP
@@ -114,134 +95,19 @@ do Script
 # Loading work.instr_reg_risc_v(behavioral_arch)
 # Loading ieee.std_logic_arith(body)
 # Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
+# ** Warning: (vsim-3015) UP.sv(46): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
 #    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-3015) UP.sv(74): [PCDPC] - Port size (3) does not match connection size (2) for port 'SELECT'. The port definition is at: MUX_B_ULA.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/MUX_B_ULA File: MUX_B_ULA.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
+# ** Warning: (vsim-8822) UP.sv(103): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
 #    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
+# ** Warning: (vsim-8822) UP.sv(103): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
 #    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-3015) UP.sv(125): [PCDPC] - Port size (3) does not match connection size (2) for port 'SELETOR_MUX_B'. The port definition is at: MAQUINA_DE_ESTADOS.sv(20).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/FONTE File: MAQUINA_DE_ESTADOS.sv
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jcsf2  Hostname: HWC19  ProcessID: 3856
-#           Attempting to use alternate WLF file "./wlftjrtm67".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjrtm67
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-do Script
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:01:51 on Oct 02,2019
-# vlog -reportprogress 300 -f Modulos_SV 
-# -- Compiling module MAQUINA_DE_ESTADOS
-# -- Compiling module State_machine
-# -- Compiling module register
-# -- Compiling module Simulation
-# -- Compiling module UP
-# -- Compiling module Memoria64
-# -- Compiling module Memoria32
-# -- Compiling module ramOnChip32
-# -- Compiling module ramOnChip64
-# -- Compiling module SIGN_EXT
-# -- Compiling module MUX_B_ULA
-# -- Compiling module MUX_A_ULA
-# -- Compiling module Deslocamento
-# -- Compiling module bancoReg
-# -- Compiling module MUX_DATA_REG
-# -- Compiling module MUX_ALU_ALUOUT
-# -- Compiling module SIGN_EXT_2
-# -- Compiling module MUX_WRT_DATA
-# 
-# Top level modules:
-# 	State_machine
-# 	Simulation
-# 	MUX_WRT_DATA
-# End time: 17:01:52 on Oct 02,2019, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:01:52 on Oct 02,2019
-# vcom -reportprogress 300 -f Modulos_VHD 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Compiling entity Ula64
-# -- Compiling architecture behavioral of Ula64
-# -- Compiling entity Instr_Reg_RISC_V
-# -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-# End time: 17:01:52 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 17:01:54 on Oct 02,2019, Elapsed time: 0:41:42
-# Errors: 0, Warnings: 8
-# vsim -L altera_mf_ver -gui work.Simulation 
-# Start time: 17:01:54 on Oct 02,2019
-# Loading sv_std.std
-# Loading work.Simulation
-# Loading work.UP
-# Loading work.register
-# Loading work.SIGN_EXT_2
-# Loading work.SIGN_EXT
-# Loading work.Deslocamento
-# Loading work.MUX_A_ULA
-# Loading work.MUX_B_ULA
-# Loading work.MUX_DATA_REG
-# Loading work.MUX_ALU_ALUOUT
-# Loading work.bancoReg
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.MAQUINA_DE_ESTADOS
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
+# ** Warning: (vsim-8822) UP.sv(103): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
 #    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: jcsf2  Hostname: HWC19  ProcessID: 3856
-#           Attempting to use alternate WLF file "./wlftn9gec0".
+#           Attempting to use alternate WLF file "./wlft9ifi3q".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftn9gec0
+#           Using alternate file: ./wlft9ifi3q
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
@@ -252,543 +118,25 @@ do Script
 # Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.
 # Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
 # Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Compile of MAQUINA_DE_ESTADOS.sv was successful.
-# Compile of UP.sv was successful.
-# 2 compiles, 0 failed with no errors.
-do Script
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:10:37 on Oct 02,2019
-# vlog -reportprogress 300 -f Modulos_SV 
-# -- Compiling module MAQUINA_DE_ESTADOS
-# -- Compiling module State_machine
-# -- Compiling module register
-# -- Compiling module Simulation
-# -- Compiling module UP
-# -- Compiling module Memoria64
-# -- Compiling module Memoria32
-# -- Compiling module ramOnChip32
-# -- Compiling module ramOnChip64
-# -- Compiling module SIGN_EXT
-# -- Compiling module MUX_B_ULA
-# -- Compiling module MUX_A_ULA
-# -- Compiling module Deslocamento
-# -- Compiling module bancoReg
-# -- Compiling module MUX_DATA_REG
-# -- Compiling module MUX_ALU_ALUOUT
-# -- Compiling module SIGN_EXT_2
-# -- Compiling module MUX_WRT_DATA
-# 
-# Top level modules:
-# 	State_machine
-# 	Simulation
-# 	MUX_WRT_DATA
-# End time: 17:10:37 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:10:37 on Oct 02,2019
-# vcom -reportprogress 300 -f Modulos_VHD 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Compiling entity Ula64
-# -- Compiling architecture behavioral of Ula64
-# -- Compiling entity Instr_Reg_RISC_V
-# -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-# End time: 17:10:37 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 17:10:40 on Oct 02,2019, Elapsed time: 0:08:46
-# Errors: 0, Warnings: 6
-# vsim -L altera_mf_ver -gui work.Simulation 
-# Start time: 17:10:40 on Oct 02,2019
-# Loading sv_std.std
-# Loading work.Simulation
-# Loading work.UP
-# Loading work.register
-# Loading work.SIGN_EXT_2
-# Loading work.SIGN_EXT
-# Loading work.Deslocamento
-# Loading work.MUX_A_ULA
-# Loading work.MUX_B_ULA
-# Loading work.MUX_DATA_REG
-# Loading work.MUX_ALU_ALUOUT
-# Loading work.bancoReg
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.MAQUINA_DE_ESTADOS
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jcsf2  Hostname: HWC19  ProcessID: 3856
-#           Attempting to use alternate WLF file "./wlft4xkbyv".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft4xkbyv
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Compile of SIGN_EXT_2.sv was successful.
-do Script
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:18:02 on Oct 02,2019
-# vlog -reportprogress 300 -f Modulos_SV 
-# -- Compiling module MAQUINA_DE_ESTADOS
-# -- Compiling module State_machine
-# -- Compiling module register
-# -- Compiling module Simulation
-# -- Compiling module UP
-# -- Compiling module Memoria64
-# -- Compiling module Memoria32
-# -- Compiling module ramOnChip32
-# -- Compiling module ramOnChip64
-# -- Compiling module SIGN_EXT
-# -- Compiling module MUX_B_ULA
-# -- Compiling module MUX_A_ULA
-# -- Compiling module Deslocamento
-# -- Compiling module bancoReg
-# -- Compiling module MUX_DATA_REG
-# -- Compiling module MUX_ALU_ALUOUT
-# -- Compiling module SIGN_EXT_2
-# -- Compiling module MUX_WRT_DATA
-# 
-# Top level modules:
-# 	State_machine
-# 	Simulation
-# 	MUX_WRT_DATA
-# End time: 17:18:02 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:18:02 on Oct 02,2019
-# vcom -reportprogress 300 -f Modulos_VHD 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Compiling entity Ula64
-# -- Compiling architecture behavioral of Ula64
-# -- Compiling entity Instr_Reg_RISC_V
-# -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-# End time: 17:18:02 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 17:18:04 on Oct 02,2019, Elapsed time: 0:07:24
-# Errors: 0, Warnings: 6
-# vsim -L altera_mf_ver -gui work.Simulation 
-# Start time: 17:18:04 on Oct 02,2019
-# Loading sv_std.std
-# Loading work.Simulation
-# Loading work.UP
-# Loading work.register
-# Loading work.SIGN_EXT_2
-# Loading work.SIGN_EXT
-# Loading work.Deslocamento
-# Loading work.MUX_A_ULA
-# Loading work.MUX_B_ULA
-# Loading work.MUX_DATA_REG
-# Loading work.MUX_ALU_ALUOUT
-# Loading work.bancoReg
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.MAQUINA_DE_ESTADOS
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jcsf2  Hostname: HWC19  ProcessID: 3856
-#           Attempting to use alternate WLF file "./wlftj8wy4e".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftj8wy4e
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Compile of SIGN_EXT_2.sv was successful.
-add wave -position end  sim:/Simulation/processing/MUX_B_ULA/EXTENSOR
-restart
-# Loading work.SIGN_EXT_2
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: C:/Users/lgoq/Desktop/procRISCV/SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: C:/Users/lgoq/Desktop/procRISCV/SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-run -all
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Compile of SIGN_EXT_2.sv was successful.
-do Script
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:28:29 on Oct 02,2019
-# vlog -reportprogress 300 -f Modulos_SV 
-# -- Compiling module MAQUINA_DE_ESTADOS
-# -- Compiling module State_machine
-# -- Compiling module register
-# -- Compiling module Simulation
-# -- Compiling module UP
-# -- Compiling module Memoria64
-# -- Compiling module Memoria32
-# -- Compiling module ramOnChip32
-# -- Compiling module ramOnChip64
-# -- Compiling module SIGN_EXT
-# -- Compiling module MUX_B_ULA
-# -- Compiling module MUX_A_ULA
-# -- Compiling module Deslocamento
-# -- Compiling module bancoReg
-# -- Compiling module MUX_DATA_REG
-# -- Compiling module MUX_ALU_ALUOUT
-# -- Compiling module SIGN_EXT_2
-# -- Compiling module MUX_WRT_DATA
-# 
-# Top level modules:
-# 	State_machine
-# 	Simulation
-# 	MUX_WRT_DATA
-# End time: 17:28:29 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:28:29 on Oct 02,2019
-# vcom -reportprogress 300 -f Modulos_VHD 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Compiling entity Ula64
-# -- Compiling architecture behavioral of Ula64
-# -- Compiling entity Instr_Reg_RISC_V
-# -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-# End time: 17:28:29 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 17:28:31 on Oct 02,2019, Elapsed time: 0:10:27
-# Errors: 0, Warnings: 0
-# vsim -L altera_mf_ver -gui work.Simulation 
-# Start time: 17:28:31 on Oct 02,2019
-# Loading sv_std.std
-# Loading work.Simulation
-# Loading work.UP
-# Loading work.register
-# Loading work.SIGN_EXT_2
-# Loading work.SIGN_EXT
-# Loading work.Deslocamento
-# Loading work.MUX_A_ULA
-# Loading work.MUX_B_ULA
-# Loading work.MUX_DATA_REG
-# Loading work.MUX_ALU_ALUOUT
-# Loading work.bancoReg
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.MAQUINA_DE_ESTADOS
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jcsf2  Hostname: HWC19  ProcessID: 3856
-#           Attempting to use alternate WLF file "./wlftbw0zfa".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftbw0zfa
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-add wave -position end  sim:/Simulation/processing/MUX_B_ULA/EXTENSOR
-restart
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-run -all
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Compile of MAQUINA_DE_ESTADOS.sv was successful.
-do Script
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:35:28 on Oct 02,2019
-# vlog -reportprogress 300 -f Modulos_SV 
-# -- Compiling module MAQUINA_DE_ESTADOS
-# -- Compiling module State_machine
-# -- Compiling module register
-# -- Compiling module Simulation
-# -- Compiling module UP
-# -- Compiling module Memoria64
-# -- Compiling module Memoria32
-# -- Compiling module ramOnChip32
-# -- Compiling module ramOnChip64
-# -- Compiling module SIGN_EXT
-# -- Compiling module MUX_B_ULA
-# -- Compiling module MUX_A_ULA
-# -- Compiling module Deslocamento
-# -- Compiling module bancoReg
-# -- Compiling module MUX_DATA_REG
-# -- Compiling module MUX_ALU_ALUOUT
-# -- Compiling module SIGN_EXT_2
-# -- Compiling module MUX_WRT_DATA
-# 
-# Top level modules:
-# 	State_machine
-# 	Simulation
-# 	MUX_WRT_DATA
-# End time: 17:35:28 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
-# Start time: 17:35:29 on Oct 02,2019
-# vcom -reportprogress 300 -f Modulos_VHD 
-# -- Loading package STANDARD
-# -- Loading package TEXTIO
-# -- Loading package std_logic_1164
-# -- Loading package std_logic_arith
-# -- Compiling entity Ula64
-# -- Compiling architecture behavioral of Ula64
-# -- Compiling entity Instr_Reg_RISC_V
-# -- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-# End time: 17:35:29 on Oct 02,2019, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 17:35:31 on Oct 02,2019, Elapsed time: 0:07:00
-# Errors: 0, Warnings: 0
-# vsim -L altera_mf_ver -gui work.Simulation 
-# Start time: 17:35:31 on Oct 02,2019
-# Loading sv_std.std
-# Loading work.Simulation
-# Loading work.UP
-# Loading work.register
-# Loading work.SIGN_EXT_2
-# Loading work.SIGN_EXT
-# Loading work.Deslocamento
-# Loading work.MUX_A_ULA
-# Loading work.MUX_B_ULA
-# Loading work.MUX_DATA_REG
-# Loading work.MUX_ALU_ALUOUT
-# Loading work.bancoReg
-# Loading work.Memoria32
-# Loading work.ramOnChip32
-# Loading altera_mf_ver.altsyncram
-# Loading work.Memoria64
-# Loading work.ramOnChip64
-# Loading work.MAQUINA_DE_ESTADOS
-# Loading altera_mf_ver.altsyncram_body
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.instr_reg_risc_v(behavioral_arch)
-# Loading ieee.std_logic_arith(body)
-# Loading work.ula64(behavioral)
-# ** Warning: (vsim-3015) UP.sv(45): [PCDPC] - Port size (32) does not match connection size (64) for port 'ENTRADA'. The port definition is at: SIGN_EXT_2.sv(1).
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/Extensor File: SIGN_EXT_2.sv
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Overflow'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Negativo'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-8822) UP.sv(102): [TFMPC] - Missing Verilog connection for formal VHDL port 'Maior'.
-#    Time: 0 ps  Iteration: 0  Instance: /Simulation/processing/ULA File: ula64.vhd
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: jcsf2  Hostname: HWC19  ProcessID: 3856
-#           Attempting to use alternate WLF file "./wlftifz2m0".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftifz2m0
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_32_INSTRUCTIONS.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock0.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock1.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock2.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock3.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock4.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock5.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock6.altsyncram_component.m_default.altsyncram_inst
-# Warning: read_during_write_mode_mixed_ports is assumed as               OLD_DATA
-# Time: 0  Instance: Simulation.processing.MEM_DATA.memBlock7.altsyncram_component.m_default.altsyncram_inst
-# Compile of MAQUINA_DE_ESTADOS.sv was successful.
-# Compile of MUX_DATA_REG.sv was successful with warnings.
-# Compile of UP.sv was successful.
-# 3 compiles, 0 failed with no errors.
+# ERROR: dados.mif, line 20, Invalid Altera-mif record.

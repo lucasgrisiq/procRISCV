@@ -35,18 +35,18 @@ module Memoria32
 
     wire [15:0]readUsefullAddress = raddress[15:0]; 
     
-    wire [15:0]addS0 = readUsefullAddress + 0;
-    wire [15:0]addS1 = readUsefullAddress + 1;
-    wire [15:0]addS2 = readUsefullAddress + 2;
-    wire [15:0]addS3 = readUsefullAddress + 3;
+    wire [15:0]addS0        = readUsefullAddress + 0;
+    wire [15:0]addS1        = readUsefullAddress + 1;
+    wire [15:0]addS2        = readUsefullAddress + 2;
+    wire [15:0]addS3        = readUsefullAddress + 3;
     
     
     wire [15:0]writeUsefullAddress = waddress[15:0]; 
     
-    wire [15:0]waddS0 = writeUsefullAddress + 0;
-    wire [15:0]waddS1 = writeUsefullAddress + 1;
-    wire [15:0]waddS2 = writeUsefullAddress + 2;
-    wire [15:0]waddS3 = writeUsefullAddress + 3;
+    wire [15:0]waddS0       = writeUsefullAddress + 0;
+    wire [15:0]waddS1       = writeUsefullAddress + 1;
+    wire [15:0]waddS2       = writeUsefullAddress + 2;
+    wire [15:0]waddS3       = writeUsefullAddress + 3;
         
     wire [7:0]inS0; 
     wire [7:0]inS1;
@@ -58,15 +58,15 @@ module Memoria32
     wire [7:0]outS2;
     wire [7:0]outS3;
          	    
-    assign Dataout[31:24] = outS3;
-    assign Dataout[23:16] = outS2;
-    assign Dataout[15:8] = outS1;
-    assign Dataout[7:0] = outS0;
+    assign Dataout[31:24]   = outS3;
+    assign Dataout[23:16]   = outS2;
+    assign Dataout[15:8]    = outS1;
+    assign Dataout[7:0]     = outS0;
     
-    assign inS3 = Datain[31:24];
-    assign inS2 = Datain[23:16];
-    assign inS1 = Datain[15:8];
-    assign inS0 = Datain[7:0]; 
+    assign inS3             = Datain[31:24];
+    assign inS2             = Datain[23:16];
+    assign inS1             = Datain[15:8];
+    assign inS0             = Datain[7:0]; 
     
     //Bancos de memórias (cada banco possui 65536 bytes)
     //0
