@@ -51,8 +51,6 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
     enum bit [1:0] {sd, sw, sh, sb} tipoStore;
 
-    enum bit [1:0] {srli, srai, slli} tipoShift;
-
     always_ff @(posedge CLK, posedge RST) begin
         if(RST) Estado  <= reset;
         else Estado     <= prox_estado;
@@ -105,6 +103,9 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
             7'b1101111: begin                        // tipo UJ
                 tipoOP          = tipoUJ;
+            end
+            default: begin                           // opcode inexistente
+                
             end
         endcase
 
