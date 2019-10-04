@@ -7,10 +7,10 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/ahac/Desktop/procRISCV
+Z0 dC:/Users/jcsf2/Desktop/procRISCV
 vbancoReg
 Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z2 !s110 1570131254
+Z2 !s110 1570226189
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
 I`MOnE05dQ1@`[Y_O[A[=11
@@ -18,7 +18,7 @@ Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 bancoReg_sv_unit
 S1
 R0
-Z4 w1570129871
+Z4 w1570202792
 8bancoReg.sv
 FbancoReg.sv
 L0 1
@@ -26,8 +26,8 @@ Z5 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1570131253.000000
-Z7 !s107 MUX_WRT_DATA.sv|SIGN_EXT_2.sv|MUX_ALU_ALUOUT.sv|MUX_DATA_REG.sv|bancoReg.sv|Deslocamento.sv|MUX_A_ULA.sv|MUX_B_ULA.sv|SIGN_EXT.sv|ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
+Z6 !s108 1570226189.000000
+Z7 !s107 MUX_TIPO_SHIFT.sv|MUX_MEM_ADDRESS.sv|MUX_ENTRADA_MEMORIA.sv|MUX_WRT_DATA.sv|SIGN_EXT_2.sv|MUX_ALU_ALUOUT.sv|MUX_DATA_REG.sv|bancoReg.sv|Deslocamento.sv|MUX_A_ULA.sv|MUX_B_ULA.sv|SIGN_EXT.sv|ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
 Z8 !s90 -reportprogress|300|-f|Modulos_SV|
 !i113 1
 Z9 tCvgOpt 0
@@ -42,7 +42,7 @@ R3
 !s105 Deslocamento_sv_unit
 S1
 R0
-R4
+Z10 w1570217979
 8Deslocamento.sv
 FDeslocamento.sv
 L0 1
@@ -57,53 +57,53 @@ R8
 R9
 n@deslocamento
 Einstr_reg_risc_v
-R4
-Z10 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z11 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z11 w1568664423
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
 R0
-Z12 8Instr_Reg_Risc_V.vhd
-Z13 FInstr_Reg_Risc_V.vhd
+Z14 8Instr_Reg_Risc_V.vhd
+Z15 FInstr_Reg_Risc_V.vhd
 l0
 L49
 VzgO8gWh_:1J3Q7IMD_6361
 !s100 HF;HEc4<o>]o3`Jjc=WPJ2
-Z14 OV;C;10.6d;65
+Z16 OV;C;10.6d;65
 32
 R2
 !i10b 1
-Z15 !s108 1570131254.000000
-Z16 !s90 -reportprogress|300|-f|Modulos_VHD|
+R6
+Z17 !s90 -reportprogress|300|-f|Modulos_VHD|
 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
-Z17 tExplicit 1 CvgOpt 0
+Z18 tExplicit 1 CvgOpt 0
 Abehavioral_arch
-R10
-R11
+R12
+R13
 DEx4 work 16 instr_reg_risc_v 0 22 zgO8gWh_:1J3Q7IMD_6361
 l68
 L65
 Vm]9:ocK@DX0U7ei8f63dc3
 !s100 e?bWG@:SnkVC476;`5UQ[1
-R14
+R16
 32
 R2
 !i10b 1
-R15
-R16
-Z18 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
-!i113 1
+R6
 R17
+Z19 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
+!i113 1
+R18
 vMAQUINA_DE_ESTADOS
 R1
 R2
 !i10b 1
-!s100 @DM]<DL[_SBP_OQ5:QC^>0
-IV^^FY;8LMPiK`RBMf5I652
+!s100 =OId5:8CgEzT9@cGR@6m40
+INeHfT>L=_84fOj5QHal>>2
 R3
 !s105 MAQUINA_DE_ESTADOS_sv_unit
 S1
 R0
-R4
+w1570226124
 8MAQUINA_DE_ESTADOS.sv
 FMAQUINA_DE_ESTADOS.sv
 L0 1
@@ -130,7 +130,7 @@ R0
 R4
 8Memoria32.sv
 FMemoria32.sv
-Z19 L0 26
+Z20 L0 26
 R5
 r1
 !s85 0
@@ -151,10 +151,10 @@ R3
 !s105 Memoria64_sv_unit
 S1
 R0
-R4
+R11
 8Memoria64.sv
 FMemoria64.sv
-R19
+R20
 R5
 r1
 !s85 0
@@ -193,13 +193,13 @@ vMUX_ALU_ALUOUT
 R1
 R2
 !i10b 1
-!s100 O>e92=TJjE:ha?S]KiMea3
-IG<lP0366^DgWE0D_?oDUa3
+!s100 :JV6=SF2L6PCSUSV]iG0N1
+IG?7;3gkL5YTiNSl>fOT8R0
 R3
 !s105 MUX_ALU_ALUOUT_sv_unit
 S1
 R0
-R4
+w1570215288
 8MUX_ALU_ALUOUT.sv
 FMUX_ALU_ALUOUT.sv
 L0 1
@@ -241,13 +241,13 @@ vMUX_DATA_REG
 R1
 R2
 !i10b 1
-!s100 RO3BJ_bl7HI?@MFal:RRZ3
-IH0dZYcY]1na;68Kj[MmCd0
+!s100 PJjcICY5iH<3IENdBjd740
+Ic<:=KL5cC_EYA8WOUo<<90
 R3
 !s105 MUX_DATA_REG_sv_unit
 S1
 R0
-R4
+R10
 8MUX_DATA_REG.sv
 FMUX_DATA_REG.sv
 L0 1
@@ -261,17 +261,89 @@ R8
 !i113 1
 R9
 n@m@u@x_@d@a@t@a_@r@e@g
+vMUX_ENTRADA_MEMORIA
+R1
+R2
+!i10b 1
+!s100 OOaLV77;DFY`_<mCkNY4_3
+InGZmMoooLDdia6EiAl:hL2
+R3
+!s105 MUX_ENTRADA_MEMORIA_sv_unit
+S1
+R0
+w1570209831
+8MUX_ENTRADA_MEMORIA.sv
+FMUX_ENTRADA_MEMORIA.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@m@u@x_@e@n@t@r@a@d@a_@m@e@m@o@r@i@a
+vMUX_MEM_ADDRESS
+R1
+R2
+!i10b 1
+!s100 O]@f:M?0JblBz?L34?;?m3
+IDPVFUk?PP4F6h85zCJjVj2
+R3
+!s105 MUX_MEM_ADDRESS_sv_unit
+S1
+R0
+w1570216648
+8MUX_MEM_ADDRESS.sv
+FMUX_MEM_ADDRESS.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@m@u@x_@m@e@m_@a@d@d@r@e@s@s
+vMUX_TIPO_SHIFT
+R1
+R2
+!i10b 1
+!s100 hR5G<I973AK<2Jd9f?>P<0
+IBlkZ_BH=6mQKzQ5@ZBBOo0
+R3
+!s105 MUX_TIPO_SHIFT_sv_unit
+S1
+R0
+R10
+8MUX_TIPO_SHIFT.sv
+FMUX_TIPO_SHIFT.sv
+L0 1
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+n@m@u@x_@t@i@p@o_@s@h@i@f@t
 vMUX_WRT_DATA
 R1
 R2
 !i10b 1
-!s100 89fz7<lZF5Rn@Soh6c;O30
-I^<IGPcEWK89fC=H96]Y6n1
+!s100 PI[R<Je]?_^[K@[JkWXmP1
+IJQ;mFY`6I[E7GPnUfWCI31
 R3
 !s105 MUX_WRT_DATA_sv_unit
 S1
 R0
-R4
+w1570213971
 8MUX_WRT_DATA.sv
 FMUX_WRT_DATA.sv
 L0 1
@@ -292,10 +364,10 @@ R2
 IOOLMj_cg_N:74eHXMeQLm3
 R3
 R0
-R4
+R11
 8ramOnChip32.v
 FramOnChip32.v
-Z20 L0 40
+Z21 L0 40
 R5
 r1
 !s85 0
@@ -313,10 +385,10 @@ R2
 I5Bnob:67XieXOZhhzR6A22
 R3
 R0
-R4
+R11
 8ramOnChip64.v
 FramOnChip64.v
-R20
+R21
 R5
 r1
 !s85 0
@@ -337,7 +409,7 @@ R3
 !s105 register_sv_unit
 S1
 R0
-R4
+R11
 8register.sv
 Fregister.sv
 L0 1
@@ -432,7 +504,7 @@ R3
 !s105 Processador_sv_unit
 S1
 R0
-R4
+R11
 8Processador.sv
 FProcessador.sv
 L0 1
@@ -447,55 +519,55 @@ R8
 R9
 n@state_machine
 Eula64
-R4
-Z21 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
-R10
 R11
+Z22 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R12
+R13
 R0
-Z22 8ula64.vhd
-Z23 Fula64.vhd
+Z23 8ula64.vhd
+Z24 Fula64.vhd
 l0
 L54
 VA[hKfbX3SC@81eT`QAGTa0
 !s100 gXP0QOjWED7GdgGCHP44]0
-R14
+R16
 32
 R2
 !i10b 1
-R15
-R16
-R18
-!i113 1
+R6
 R17
+R19
+!i113 1
+R18
 Abehavioral
-R21
-R10
-R11
+R22
+R12
+R13
 DEx4 work 5 ula64 0 22 A[hKfbX3SC@81eT`QAGTa0
 l80
 L70
 VITWg]kaXHNgAHH8EBQEIM3
 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
-R14
+R16
 32
 R2
 !i10b 1
-R15
-R16
-R18
-!i113 1
+R6
 R17
+R19
+!i113 1
+R18
 vUP
 R1
 R2
 !i10b 1
-!s100 WWBN_PbC<C5z4=:5QD4OM0
-IWj2COk]22<o_KE_QSF_HU2
+!s100 UE2K]6E1lnWRhCfn?OP[c2
+I3m14013UAB`^jWJKk3<ki2
 R3
 !s105 UP_sv_unit
 S1
 R0
-R4
+w1570224611
 8UP.sv
 FUP.sv
 L0 1

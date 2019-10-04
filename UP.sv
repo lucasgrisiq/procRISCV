@@ -78,7 +78,7 @@ module UP  (input logic CLK,
     
     Deslocamento SHIFT_MUX (.Shift(SAIDA_MUX_SHIFT),                    // saida Mux_tipo_shift
                             .Entrada(A_OUT),	                        //rs1
-                            .N(Instr31_0[25:19]), 	                // shamt
+                            .N(INSTR31_0[25:19]), 	                // shamt
                             .Saida(SAIDA_DESLOCAMENTO));	        //rs2
 
     MUX_A_ULA MUX_A_ULA (.SELECT(SELETOR_MUX_A),
@@ -110,7 +110,7 @@ module UP  (input logic CLK,
                                   .ALU(Alu),
                                   .MEM_REG(MEM_REGISTER64),
                                   .SAIDA(SAIDA_MUX_ALU));   
-                                   
+
     MUX_MEM_ADDRESS MUX_MEM_ADDRESS (.SELETOR(SELETOR_MUX_MEM_ADDRESS),
                                      .ALU_OUT(AluOut),
                                      .address(RAddress));    
@@ -177,6 +177,6 @@ module UP  (input logic CLK,
                               .SELETOR_ALU(Seletor_Alu),
                               .MENOR_ALU(MENOR_ALU),
                               .SELECT_MUX_MEM(SELETOR_MUX_MEM),
-                              .SELETOR_SHIFT(SELETOR_P_SHIFT);
+                              .SELETOR_SHIFT(SELETOR_P_SHIFT));
 
 endmodule

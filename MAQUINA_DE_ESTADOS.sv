@@ -48,12 +48,11 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     recebe_pc_wrt_pc,
                     read_mem_store,
                     espera_store,
-                    nop,
-                    breakOp,
                     overflow,
-                    load_254_255_pc} Estado, prox_estado;
+                    load_254_255_pc,
+                    breakOp} Estado, prox_estado;
 
-    enum bit [2:0] {tipoR, tipoI, tipoS, tipoSB, tipoU, tipoUJ, noOPcode} tipoOP;
+    enum bit [3:0] {tipoR, tipoI, tipoS, tipoSB, tipoU, tipoUJ, noOPcode, nopOP, OPbreak} tipoOP;
 
     enum bit [2:0] {ld, lb, lh, lw, lbu, lhu, lwu} tipoLoad;
 
@@ -74,7 +73,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
             7'b0010011: begin                        //tipo I
                 tipoOP = tipoI;
-                if(INSTRUCAO[31:7] == 25'b0000000000000000000000000) tipoOP = nop;
+                if(INSTRUCAO[31:7] == 25'b0000000000000000000000000) tipoOP = nopOP;
             end                                          
 
             7'b0000011: begin
@@ -114,7 +113,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 tipoOP          = tipoUJ;
             end
             7'b1110011: begin
-                tipoOP = breakOp;
+                tipoOP = OPbreak;
             end
             default: begin                           // opcode inexistente
                 tipoOP = noOPcode;
@@ -172,40 +171,6 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 WR_ALU_OUT          = 1'b0;
                 SELETOR_ALU         = 2'b01;
                 prox_estado         = somaPC;
-                write_reg_A         = 1'b0; 
-                write_reg_B         = 1'b0;
-            end
-
-            nop: begin
-                WR_EPC              = 1'b0;
-                wrDataMemReg        = 1'b0;         
-                wrDataMem           = 1'b0;        
-                WR_BANCO_REG        = 1'b0;         
-                LOAD_IR             = 1'b0;
-                WR_MEM_INSTR        = 1'b0;
-                reset_wire          = 1'b0;
-                operacao            = 3'b000;
-                WRITE_PC            = 1'b0;
-                WR_ALU_OUT          = 1'b0;
-                SELETOR_ALU         = 2'b01;
-                prox_estado         = somaPC;
-                write_reg_A         = 1'b0; 
-                write_reg_B         = 1'b0;
-            end
-
-            breakOp: begin
-                WR_EPC              = 1'b0;
-                wrDataMemReg        = 1'b0;         
-                wrDataMem           = 1'b0;        
-                WR_BANCO_REG        = 1'b0;         
-                LOAD_IR             = 1'b0;
-                WR_MEM_INSTR        = 1'b0;
-                reset_wire          = 1'b0;
-                operacao            = 3'b000;
-                WRITE_PC            = 1'b0;
-                WR_ALU_OUT          = 1'b0;
-                SELETOR_ALU         = 1'b1;
-                prox_estado         = breakOp;
                 write_reg_A         = 1'b0; 
                 write_reg_B         = 1'b0;
             end
@@ -309,7 +274,9 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             if(OVERFLOW) prox_estado = overflow;
                         end
 
-                        else if(op_code == 7'b0010011)begin             
+                        else if(op_code == 7'b0010011 &&
+                                (INSTRUCAO[14:12] == 3'b101
+                                ||INSTRUCAO[14:12] == 3'b001))begin             
                             SELECT_MUX_DATA = 4'b1100;
                             if(INSTRUCAO[14:12] == 3'b001)              SELETOR_SHIFT   = 2'b00;    //tipoShift = slli
                             else if (INSTRUCAO[14:12] == 3'b101) begin
@@ -343,8 +310,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                                 WR_ALU_OUT          = 1'b1;
                                 WR_BANCO_REG        = 1'b0;
                                 wrDataMemReg        = 1'b0;
-                                write_reg_A         = 1'b0; 
-                                write_reg_B         = 1'b0;
+                                write_reg_A         = 1'b1; 
+                                write_reg_B         = 1'b1;
                                 prox_estado         = write_reg_alu;
                                 if(OVERFLOW) prox_estado = overflow;
                             end
@@ -462,6 +429,40 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                         prox_estado         = wrt_reg_lui;
                     end
 
+                    nopOP: begin
+                        WR_EPC              = 1'b0;
+                        wrDataMemReg        = 1'b0;         
+                        wrDataMem           = 1'b0;        
+                        WR_BANCO_REG        = 1'b0;         
+                        LOAD_IR             = 1'b0;
+                        WR_MEM_INSTR        = 1'b0;
+                        reset_wire          = 1'b0;
+                        operacao            = 3'b000;
+                        WRITE_PC            = 1'b0;
+                        WR_ALU_OUT          = 1'b0;
+                        SELETOR_ALU         = 2'b01;
+                        prox_estado         = somaPC;
+                        write_reg_A         = 1'b0; 
+                        write_reg_B         = 1'b0;
+                    end
+
+                    OPbreak: begin
+                        WR_EPC              = 1'b0;
+                        wrDataMemReg        = 1'b0;         
+                        wrDataMem           = 1'b0;        
+                        WR_BANCO_REG        = 1'b0;         
+                        LOAD_IR             = 1'b0;
+                        WR_MEM_INSTR        = 1'b0;
+                        reset_wire          = 1'b0;
+                        operacao            = 3'b000;
+                        WRITE_PC            = 1'b0;
+                        WR_ALU_OUT          = 1'b0;
+                        SELETOR_ALU         = 1'b1;
+                        prox_estado         = breakOp;
+                        write_reg_A         = 1'b0; 
+                        write_reg_B         = 1'b0;
+                    end
+
                     noOPcode: begin
                         WR_EPC              = 1'b1;
                         SELETOR_MUX_A       = 2'b00;
@@ -502,6 +503,23 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                         prox_estado         = load_254_255_pc;
                     end
                 endcase
+            end
+
+            breakOp: begin
+                WR_EPC              = 1'b0;
+                wrDataMemReg        = 1'b0;         
+                wrDataMem           = 1'b0;        
+                WR_BANCO_REG        = 1'b0;         
+                LOAD_IR             = 1'b0;
+                WR_MEM_INSTR        = 1'b0;
+                reset_wire          = 1'b0;
+                operacao            = 3'b000;
+                WRITE_PC            = 1'b0;
+                WR_ALU_OUT          = 1'b0;
+                SELETOR_ALU         = 1'b1;
+                prox_estado         = breakOp;
+                write_reg_A         = 1'b0; 
+                write_reg_B         = 1'b0;
             end
 
             load_254_255_pc: begin
