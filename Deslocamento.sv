@@ -1,5 +1,5 @@
 module Deslocamento (	
-					input 	logic [1:0] Shift,
+					input 	logic [1:0] Shift, 
 					input 	logic signed [63:0] Entrada,
 					input 	logic [5:0] N,
 					output	logic [63:0]Saida

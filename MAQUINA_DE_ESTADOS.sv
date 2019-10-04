@@ -24,7 +24,8 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             output logic [1:0] SELETOR_MUX_A,
                             output logic [2:0] SELETOR_MUX_B,
                             output logic write_reg_A,
-                            output logic write_reg_B);
+                            output logic write_reg_B,
+                            output logic SELETOR_SHIFT);
     
     enum bit [4:0] {reset,                          // Valores que Estado e prox_estado podem receber
                     somaPC, 
@@ -67,7 +68,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
     always_comb begin
         case(op_code) 
             7'b0110011: begin                        // Instruções do Tipo R
-                tipoOP = tipoR;
+                tipoOP  = tipoR;
                  
             end
 
@@ -77,7 +78,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             end                                          
 
             7'b0000011: begin
-                tipoOP = tipoI;
+                tipoOP  = tipoI;
                 if(INSTRUCAO[14:12] == 3'b011) tipoLoad = ld;
                 else if(INSTRUCAO[14:12] == 3'b000) tipoLoad = lb;
                 else if(INSTRUCAO[14:12] == 3'b001) tipoLoad = lh;
@@ -90,27 +91,27 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 tipoOP = tipoI;
             end
             7'b0100011: begin                        // tipo S
-                tipoOP = tipoS;
-                if(INSTRUCAO[14:12] == 3'b111) tipoStore = sd;
-                else if(INSTRUCAO[14:12] == 3'b010) tipoStore = sw;
-                else if(INSTRUCAO[14:12] == 3'b001) tipoStore = sh;
-                else if(INSTRUCAO[14:12] == 3'b000) tipoStore = sb;
+                tipoOP  = tipoS;
+                if(INSTRUCAO[14:12] == 3'b111) tipoStore        = sd;
+                else if(INSTRUCAO[14:12] == 3'b010) tipoStore   = sw;
+                else if(INSTRUCAO[14:12] == 3'b001) tipoStore   = sh;
+                else if(INSTRUCAO[14:12] == 3'b000) tipoStore   = sb;
             end 
 
             7'b1100011: begin                        // tipo SB
-                tipoOP = tipoSB;
+                tipoOP          = tipoSB;
             end                                           
             7'b1100111: begin       
                 if (INSTRUCAO[14:12] == 3'b001) tipoOP = tipoSB;
-                else tipoOP = tipoI;
+                else tipoOP     = tipoI;
             end
 
             7'b0110111: begin                        // tipo U
-                tipoOP = tipoU;
+                tipoOP          = tipoU;
             end
 
             7'b1101111: begin                        // tipo UJ
-                tipoOP = tipoUJ;
+                tipoOP          = tipoUJ;
             end
             7'b1110011: begin
                 tipoOP = breakOp;
@@ -297,15 +298,25 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     end
 
                     tipoI: begin
-                        if (op_code == 7'b1100111)begin                                     // jarl
+                        if (op_code == 7'b1100111)begin                 // jarl
                             // rd = PC
                             // PC = (rs1 + imm)*
-                            operacao                = 3'b001; // Operação de soma
-                            SELETOR_MUX_A           = 2'b01;  // Valor de A
-                            SELETOR_MUX_B           = 3'b010; // Saída extendida
-                            WR_ALU_OUT              = 1'b1;   // Flag pra escrever na alu_Out
+                            operacao                = 3'b001;           // Operação de soma
+                            SELETOR_MUX_A           = 2'b01;            // Valor de A
+                            SELETOR_MUX_B           = 3'b010;           // Saída extendida
+                            WR_ALU_OUT              = 1'b1;             // Flag pra escrever na alu_Out
                             prox_estado             = recebe_pc_wrt_pc;
                             if(OVERFLOW) prox_estado = overflow;
+                        end
+
+                        else if(op_code == 7'b0010011)begin             
+                            SELECT_MUX_DATA = 4'b1100;
+                            if(INSTRUCAO[14:12] == 3'b001)              SELETOR_SHIFT   = 2'b00;    //tipoShift = slli
+                            else if (INSTRUCAO[14:12] == 3'b101) begin
+                                if (INSTRUCAO[31:26] == 6'b000000)      SELETOR_SHIFT   = 2'b01;    //tipoShift = srli
+                                else if (INSTRUCAO[31:26] == 6'b010000) SELETOR_SHIFT   = 2'b10;    //tipoShift =  srai
+                            end
+
                         end
 
                         else if(INSTRUCAO[14:12] == 3'b010) begin           // slti
@@ -633,13 +644,14 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
             salva_reg: begin
                 case (tipoLoad)
-                    ld: SELECT_MUX_DATA = 4'b0101;
-                    lb: SELECT_MUX_DATA = 4'b0110;
-                    lh: SELECT_MUX_DATA = 4'b0111;
-                    lw: SELECT_MUX_DATA = 4'b1000;
-                    lbu: SELECT_MUX_DATA = 4'b1001;
-                    lhu: SELECT_MUX_DATA = 4'b1010;
-                    lwu: SELECT_MUX_DATA = 4'b1011;
+                    ld:     SELECT_MUX_DATA = 4'b0101;
+                    lb:     SELECT_MUX_DATA = 4'b0110;
+                    lh:     SELECT_MUX_DATA = 4'b0111;
+                    lw:     SELECT_MUX_DATA = 4'b1000;
+                    lbu:    SELECT_MUX_DATA = 4'b1001;
+                    lhu:    SELECT_MUX_DATA = 4'b1010;
+                    lwu:    SELECT_MUX_DATA = 4'b1011;
+                    
                 endcase
                 wrDataMemReg        = 1'b0;
                 WR_BANCO_REG        = 1'b1;
