@@ -1,7 +1,7 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [1:0]     SELETOR_MUX_A;
+    logic [1:0]     SELETOR_MUX_A, SELETOR_MUX_MEM;
     logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
     logic [2:0]     OPERATION, SELETOR_MUX_B;
@@ -11,7 +11,7 @@ module UP  (input logic CLK,
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
     logic           wrInstMem, IRWrite,Seletor_Alu;
     logic            WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
-    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT;                 //Declaracao dos fios de 64bits
+    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT, MUX_TO_MEM;                 //Declaracao dos fios de 64bits
     
     register PCreg (.clk(CLK),
                    .reset(RST),
@@ -79,6 +79,11 @@ module UP  (input logic CLK,
                          .EXTENSOR(SAIDA_EXTENSOR),
                          .SAIDA(SAIDA_MUX_B));
 
+    MUX_ENTRADA_MEMORIA MUX_ENTRADA_MEMORIA (.SELETOR(SELETOR_MUX_MEM),
+                                             .B(B_OUT),
+                                             .VALOR_MEM(MEM_REGISTER64),
+                                             .SAIDA(MUX_TO_MEM));
+
     MUX_DATA_REG MUX_DATA_REG2 (.MEM_DATA_REG(MEM_REGISTER64),
                                 .ALU_OUT(AluOut),
                                 .PC(PC),
@@ -119,7 +124,7 @@ module UP  (input logic CLK,
     Memoria64 MEM_DATA (.raddress(AluOut),
                         .waddress(AluOut),
                         .Clk(CLK),
-                        .Datain(B_OUT),
+                        .Datain(MUX_TO_MEM),
                         .Dataout(SAIDA_MEM_64),
                         .Wr(wrDataMem));
     
@@ -144,6 +149,7 @@ module UP  (input logic CLK,
                               .write_reg_A(WRITE_REG_A),
                               .write_reg_B(WRITE_REG_B),
                               .SELETOR_ALU(Seletor_Alu),
-                              .MENOR_ALU(MENOR_ALU));
+                              .MENOR_ALU(MENOR_ALU),
+                              .SELECT_MUX_MEM(SELETOR_MUX_MEM));
 
 endmodule
