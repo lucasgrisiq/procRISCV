@@ -1,7 +1,7 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [1:0]     SELETOR_MUX_A, SELETOR_MUX_MEM;
+    logic [1:0]     SELETOR_MUX_A, SELETOR_MUX_MEM, SELETOR_P_SHIFT, SAIDA_MUX_SHIFT;
     logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
     logic [2:0]     OPERATION, SELETOR_MUX_B;
@@ -11,7 +11,7 @@ module UP  (input logic CLK,
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
     logic           wrInstMem, IRWrite,Seletor_Alu;
     logic            WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
-    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT, MUX_TO_MEM;                 //Declaracao dos fios de 64bits
+    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT, MUX_TO_MEM,SAIDA_DESLOCAMENTO;                 //Declaracao dos fios de 64bits
     
     register PCreg (.clk(CLK),
                    .reset(RST),
@@ -66,6 +66,14 @@ module UP  (input logic CLK,
                             .Entrada(INSTR_EXT),
                             .N(6'b000001),
                             .Saida(DeslocValue));
+    
+    MUX_TIPO_SHIFT MUX_DESLOCAMENTO(.seletor(SELETOR_P_SHIFT),
+                                    .Valor_Shift(SAIDA_MUX_SHIFT));
+    
+    Deslocamento SHIFT_MUX (.Shift(SAIDA_MUX_SHIFT),           // saida Mux_tipo_shift
+                            .Entrada(A_OUT),	        //rs1
+                            .N(Instr31_0[25:19]), 	        // shamt
+                            .Saida(SAIDA_DESLOCAMENTO));	        //rs2
 
     MUX_A_ULA MUX_A_ULA (.SELECT(SELETOR_MUX_A),
                          .A(A_OUT),
@@ -88,6 +96,7 @@ module UP  (input logic CLK,
                                 .ALU_OUT(AluOut),
                                 .PC(PC),
                                 .SELECT(SELECT_MUX_DATA),
+                                .SAIDA_DESLOCAMENTO(SAIDA_DESLOCAMENTO),
                                 .SAIDA(WriteDataReg));
 
     MUX_ALU_ALUOUT MUX_SAIDA_ALU (.SELETOR(Seletor_Alu),
@@ -150,6 +159,7 @@ module UP  (input logic CLK,
                               .write_reg_B(WRITE_REG_B),
                               .SELETOR_ALU(Seletor_Alu),
                               .MENOR_ALU(MENOR_ALU),
-                              .SELECT_MUX_MEM(SELETOR_MUX_MEM));
+                              .SELECT_MUX_MEM(SELETOR_MUX_MEM),
+                              .SELETOR_SHIFT(SELETOR_P_SHIFT);
 
 endmodule
