@@ -1,23 +1,29 @@
 module UP  (input logic CLK,
             input logic RST);
     
-    logic [1:0]     SELETOR_MUX_A, SELETOR_MUX_MEM;
-    logic           wrDataMem, RegWrite_banco, WR_ALU_OUT, WRITE_REG_A, WRITE_REG_B,MENOR_ALU;
+    logic [1:0]     SELETOR_MUX_A, SELETOR_MUX_MEM, Seletor_Alu, SELETOR_MUX_MEM_ADDRESS;
+    logic           WrEPC, wrDataMem, RegWrite_banco, WR_ALU_OUT, WRITE_REG_A, WRITE_REG_B,MENOR_ALU,MAIOR_ALU, OVERFLOW_ALU;
     logic [63:0]    A,B, SAIDA_MUX_A, INSTR_EXT, DeslocValue, SAIDA_MUX_B, SAIDA_EXTENSOR;
     logic [2:0]     OPERATION, SELETOR_MUX_B;
     logic [3:0]     SELECT_MUX_DATA;
     logic [4:0]     WriteRegister, INSTR19_15,INSTR24_20;
     logic [6:0]     OP_CODE;
     logic [31:0]    WriteDataMem, MemOutInst, INSTR31_0;
-    logic           wrInstMem, IRWrite,Seletor_Alu;
-    logic            WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
-    logic [63:0]     Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT, MUX_TO_MEM;                 //Declaracao dos fios de 64bits
+    logic           wrInstMem, IRWrite;
+    logic           WRT_PC, RST_STATE_MACHINE, ZERO, IGUAL;                      //Declaracao dos fios de 1bit
+    logic [63:0]    RAddress, EPCReg, Alu, PC,SAIDA_MUX_ALU, WriteDataReg, AluOut, SAIDA_MEM_64, MEM_REGISTER64, A_OUT, B_OUT, MUX_TO_MEM;                 //Declaracao dos fios de 64bits
     
     register PCreg (.clk(CLK),
                    .reset(RST),
                    .regWrite(WRT_PC),
                    .DadoIn(SAIDA_MUX_ALU),
                    .DadoOut(PC));
+
+    register EPC (.clk(CLK),
+                  .reset(RST),
+                  .regWrite(WrEPC),
+                  .DadoIn(Alu),
+                  .DadoOut(EPCReg));
    
     register Areg (.clk(CLK),
                 .reset(RST),
@@ -93,7 +99,11 @@ module UP  (input logic CLK,
     MUX_ALU_ALUOUT MUX_SAIDA_ALU (.SELETOR(Seletor_Alu),
                                   .ALU_OUT(AluOut),
                                   .ALU(Alu),
-                                  .SAIDA(SAIDA_MUX_ALU));        
+                                  .MEM_REG(MEM_REGISTER64),
+                                  .SAIDA(SAIDA_MUX_ALU));    
+    MUX_MEM_ADDRESS MUX_MEM_ADDRESS (.SELETOR(SELETOR_MUX_MEM_ADDRESS),
+                                     .ALU_OUT(AluOut),
+                                     .address(RAddress));    
 
     bancoReg BANCO_REG (.write(RegWrite_banco),
                         .clock(CLK),
@@ -111,7 +121,9 @@ module UP  (input logic CLK,
                 .Seletor(OPERATION),
                 .Igual(IGUAL),
                 .z(ZERO),
-                .Menor(MENOR_ALU));
+                .Menor(MENOR_ALU),
+                .Maior(MAIOR_ALU),
+                .Overflow(OVERFLOW_ALU));
     
     Memoria32 MEM_32_INSTRUCTIONS ( .Clk(CLK),
                                     .raddress(PC),
@@ -121,7 +133,7 @@ module UP  (input logic CLK,
                                     .Wr(wrInstMem));
 
     
-    Memoria64 MEM_DATA (.raddress(AluOut),
+    Memoria64 MEM_DATA (.raddress(RAddress),
                         .waddress(AluOut),
                         .Clk(CLK),
                         .Datain(MUX_TO_MEM),
@@ -136,6 +148,8 @@ module UP  (input logic CLK,
                               .WR_BANCO_REG(RegWrite_banco),
                               .WR_ALU_OUT(WR_ALU_OUT),
                               .SELECT_MUX_DATA(SELECT_MUX_DATA),
+                              .SELETOR_MUX_MEM_ADDRESS(SELETOR_MUX_MEM_ADDRESS),
+                              .WR_EPC(WrEPC),
                               .op_code(OP_CODE),
                               .reset_wire(RST_STATE_MACHINE),
                               .operacao(OPERATION),
@@ -146,7 +160,9 @@ module UP  (input logic CLK,
                               .SELETOR_MUX_B(SELETOR_MUX_B),
                               .ZERO_ALU(ZERO),
                               .IGUAL_ALU(ALU),
+                              .MAIOR_ALU(MAIOR_ALU),
                               .write_reg_A(WRITE_REG_A),
+                              .OVERFLOW(OVERFLOW_ALU),
                               .write_reg_B(WRITE_REG_B),
                               .SELETOR_ALU(Seletor_Alu),
                               .MENOR_ALU(MENOR_ALU),
