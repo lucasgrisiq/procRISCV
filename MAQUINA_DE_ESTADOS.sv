@@ -7,7 +7,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             input logic MENOR_ALU,
                             input logic MAIOR_ALU,
                             input logic OVERFLOW,
-                            output logic SELETOR_ALU,
+                            output logic [1:0] SELETOR_ALU,
                             output logic [1:0] SELETOR_MUX_MEM_ADDRESS,
                             output logic WR_EPC,
                             output logic WR_BANCO_REG,
@@ -277,7 +277,13 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                         wrDataMemReg        = 1'b0;
                         write_reg_A         = 1'b0; 
                         write_reg_B         = 1'b0;
-                        if(OVERFLOW) prox_estado = overflow;
+                        if(OVERFLOW) begin
+                            SELETOR_MUX_MEM_ADDRESS = 2'b01;
+                            WR_EPC                  = 1'b1;
+                            SELETOR_ALU             = 2'b11;
+                            WR_ALU_OUT              = 1'b0;
+                            prox_estado             = overflow;
+                        end
                     end
 
                     tipoI: begin
@@ -289,7 +295,13 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                             SELETOR_MUX_B           = 3'b010;           // Saída extendida
                             WR_ALU_OUT              = 1'b1;             // Flag pra escrever na alu_Out
                             prox_estado             = recebe_pc_wrt_pc;
-                            if(OVERFLOW) prox_estado = overflow;
+                            if(OVERFLOW) begin
+                                SELETOR_MUX_MEM_ADDRESS = 2'b01;
+                                WR_EPC                  = 1'b1;
+                                SELETOR_ALU             = 2'b11;
+                                WR_ALU_OUT              = 1'b0;
+                                prox_estado             = overflow;
+                            end
                         end
 
                         else if(op_code == 7'b0010011 &&
@@ -344,7 +356,13 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                                 write_reg_A         = 1'b1; 
                                 write_reg_B         = 1'b1;
                                 prox_estado         = write_reg_alu;
-                                if(OVERFLOW) prox_estado = overflow;
+                                if(OVERFLOW)begin
+                                    SELETOR_MUX_MEM_ADDRESS = 2'b01;
+                                    WR_EPC                  = 1'b1;
+                                    SELETOR_ALU             = 2'b11;
+                                    WR_ALU_OUT              = 1'b0;
+                                    prox_estado             = overflow;
+                                end
                             end
                             else if(INSTRUCAO[14:12] == 3'b011                              // ld
                                  || INSTRUCAO[14:12] == 3'b000 && op_code == 7'b0000011     // lb
@@ -515,26 +533,28 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                         prox_estado         = load_254_255_pc;
                     end
 
-                    overflow: begin
-                        WR_EPC              = 1'b1;
-                        SELETOR_MUX_A       = 2'b00;
-                        SELETOR_MUX_B       = 3'b001;
-                        wrDataMemReg        = 1'b1;
-                        wrDataMem           = 1'b0;
-                        WR_BANCO_REG        = 1'b0;
-                        LOAD_IR             = 1'b0;
-                        WR_MEM_INSTR        = 1'b0;
-                        reset_wire          = 1'b0;
-                        operacao            = 3'b010;
-                        WRITE_PC            = 1'b0;
-                        WR_ALU_OUT          = 1'b0;
-                        SELETOR_ALU         = 2'b00;
-                        SELETOR_MUX_MEM_ADDRESS = 2'b10;
-                        write_reg_A         = 1'b0; 
-                        write_reg_B         = 1'b0;
-                        prox_estado         = load_254_255_pc;
-                    end
+                    
                 endcase
+            end
+
+            overflow: begin
+                WR_EPC              = 1'b0;
+                SELETOR_MUX_A       = 2'b00;
+                SELETOR_MUX_B       = 3'b001;
+                wrDataMemReg        = 1'b0;
+                wrDataMem           = 1'b0;
+                WR_BANCO_REG        = 1'b0;
+                LOAD_IR             = 1'b0;
+                WR_MEM_INSTR        = 1'b0;
+                reset_wire          = 1'b0;
+                operacao            = 3'b000;
+                WRITE_PC            = 1'b1;
+                WR_ALU_OUT          = 1'b0;
+                SELETOR_ALU         = 2'b11;
+                SELETOR_MUX_MEM_ADDRESS = 2'b10;
+                write_reg_A         = 1'b0; 
+                write_reg_B         = 1'b0;
+                prox_estado         = espera;
             end
             
             jal_soma: begin

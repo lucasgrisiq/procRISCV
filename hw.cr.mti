@@ -1,4 +1,142 @@
-C:/Users/lgoq/Downloads/procRISCV-master/ula64.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/lgoq/Downloads/procRISCV-master/ula64.vhd
+C:/Users/lgoq/Documents/procRISCV/ramOnChip64.v {1 {vlog -work work -stats=none C:/Users/lgoq/Documents/procRISCV/ramOnChip64.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module ramOnChip64
+
+Top level modules:
+	ramOnChip64
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/SIGN_EXT.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/SIGN_EXT.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module SIGN_EXT
+
+Top level modules:
+	SIGN_EXT
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/SIGN_EXT_2.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/SIGN_EXT_2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module SIGN_EXT_2
+
+Top level modules:
+	SIGN_EXT_2
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_TIPO_SHIFT.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_TIPO_SHIFT.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_TIPO_SHIFT
+
+Top level modules:
+	MUX_TIPO_SHIFT
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/ramOnChip32.v {1 {vlog -work work -stats=none C:/Users/lgoq/Documents/procRISCV/ramOnChip32.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module ramOnChip32
+
+Top level modules:
+	ramOnChip32
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_ALU_ALUOUT.sv {2 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_ALU_ALUOUT.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_ALU_ALUOUT
+** Warning: C:/Users/lgoq/Documents/procRISCV/MUX_ALU_ALUOUT.sv(12): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	MUX_ALU_ALUOUT
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_B_ULA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_B_ULA.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_B_ULA
+
+Top level modules:
+	MUX_B_ULA
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/UP.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/UP.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module UP
+
+Top level modules:
+	UP
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/Simulation.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/Simulation.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Simulation
+
+Top level modules:
+	Simulation
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/register.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/register.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module register
+
+Top level modules:
+	register
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_WRT_DATA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_WRT_DATA.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_WRT_DATA
+
+Top level modules:
+	MUX_WRT_DATA
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/Memoria32.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/Memoria32.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Memoria32
+
+Top level modules:
+	Memoria32
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_DATA_REG.sv {2 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_DATA_REG.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_DATA_REG
+** Warning: C:/Users/lgoq/Documents/procRISCV/MUX_DATA_REG.sv(35): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/lgoq/Documents/procRISCV/MUX_DATA_REG.sv(36): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+** Warning: C:/Users/lgoq/Documents/procRISCV/MUX_DATA_REG.sv(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+
+Top level modules:
+	MUX_DATA_REG
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_ENTRADA_MEMORIA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_ENTRADA_MEMORIA.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_ENTRADA_MEMORIA
+
+Top level modules:
+	MUX_ENTRADA_MEMORIA
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/bancoReg.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/bancoReg.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module bancoReg
+
+Top level modules:
+	bancoReg
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_A_ULA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_A_ULA.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_A_ULA
+
+Top level modules:
+	MUX_A_ULA
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/Instr_Reg_Risc_V.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/lgoq/Documents/procRISCV/Instr_Reg_Risc_V.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Instr_Reg_RISC_V
+-- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/Memoria64.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/Memoria64.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module Memoria64
+
+Top level modules:
+	Memoria64
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/MUX_MEM_ADDRESS.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/MUX_MEM_ADDRESS.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
+-- Compiling module MUX_MEM_ADDRESS
+
+Top level modules:
+	MUX_MEM_ADDRESS
+
+} {} {}} C:/Users/lgoq/Documents/procRISCV/ula64.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/lgoq/Documents/procRISCV/ula64.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -7,156 +145,18 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 2
 -- Compiling entity Ula64
 -- Compiling architecture behavioral of Ula64
 
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/Processador.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/Processador.sv
+} {} {}} C:/Users/lgoq/Documents/procRISCV/Processador.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/Processador.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module State_machine
 
 Top level modules:
 	State_machine
 
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_MEM_ADDRESS.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_MEM_ADDRESS.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_MEM_ADDRESS
-
-Top level modules:
-	MUX_MEM_ADDRESS
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/Deslocamento.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/Deslocamento.sv
+} {} {}} C:/Users/lgoq/Documents/procRISCV/Deslocamento.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Documents/procRISCV/Deslocamento.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
 -- Compiling module Deslocamento
 
 Top level modules:
 	Deslocamento
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/ramOnChip64.v {1 {vlog -work work -stats=none C:/Users/lgoq/Downloads/procRISCV-master/ramOnChip64.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module ramOnChip64
-
-Top level modules:
-	ramOnChip64
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/SIGN_EXT.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/SIGN_EXT.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module SIGN_EXT
-
-Top level modules:
-	SIGN_EXT
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/SIGN_EXT_2.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/SIGN_EXT_2.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module SIGN_EXT_2
-
-Top level modules:
-	SIGN_EXT_2
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_TIPO_SHIFT.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_TIPO_SHIFT.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_TIPO_SHIFT
-
-Top level modules:
-	MUX_TIPO_SHIFT
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/ramOnChip32.v {1 {vlog -work work -stats=none C:/Users/lgoq/Downloads/procRISCV-master/ramOnChip32.v
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module ramOnChip32
-
-Top level modules:
-	ramOnChip32
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_B_ULA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_B_ULA.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_B_ULA
-
-Top level modules:
-	MUX_B_ULA
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_ALU_ALUOUT.sv {2 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_ALU_ALUOUT.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_ALU_ALUOUT
-** Warning: C:/Users/lgoq/Downloads/procRISCV-master/MUX_ALU_ALUOUT.sv(11): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-Top level modules:
-	MUX_ALU_ALUOUT
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/UP.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/UP.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module UP
-
-Top level modules:
-	UP
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/Simulation.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/Simulation.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module Simulation
-
-Top level modules:
-	Simulation
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/register.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/register.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module register
-
-Top level modules:
-	register
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_WRT_DATA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_WRT_DATA.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_WRT_DATA
-
-Top level modules:
-	MUX_WRT_DATA
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/Memoria32.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/Memoria32.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module Memoria32
-
-Top level modules:
-	Memoria32
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_DATA_REG.sv {2 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_DATA_REG.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_DATA_REG
-** Warning: C:/Users/lgoq/Downloads/procRISCV-master/MUX_DATA_REG.sv(35): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-** Warning: C:/Users/lgoq/Downloads/procRISCV-master/MUX_DATA_REG.sv(36): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-** Warning: C:/Users/lgoq/Downloads/procRISCV-master/MUX_DATA_REG.sv(48): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
-
-Top level modules:
-	MUX_DATA_REG
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_ENTRADA_MEMORIA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_ENTRADA_MEMORIA.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_ENTRADA_MEMORIA
-
-Top level modules:
-	MUX_ENTRADA_MEMORIA
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/bancoReg.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/bancoReg.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module bancoReg
-
-Top level modules:
-	bancoReg
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/MUX_A_ULA.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/MUX_A_ULA.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module MUX_A_ULA
-
-Top level modules:
-	MUX_A_ULA
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/Instr_Reg_Risc_V.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/lgoq/Downloads/procRISCV-master/Instr_Reg_Risc_V.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 10.6d Compiler 2018.02 Feb 24 2018
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity Instr_Reg_RISC_V
--- Compiling architecture behavioral_arch of Instr_Reg_RISC_V
-
-} {} {}} C:/Users/lgoq/Downloads/procRISCV-master/Memoria64.sv {1 {vlog -work work -sv -stats=none C:/Users/lgoq/Downloads/procRISCV-master/Memoria64.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 10.6d Compiler 2018.02 Feb 24 2018
--- Compiling module Memoria64
-
-Top level modules:
-	Memoria64
 
 } {} {}}

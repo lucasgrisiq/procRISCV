@@ -26,6 +26,8 @@ add wave -position 12  -radix decimal sim:/Simulation/processing/BANCO_REG/datai
 add wave -position end -radix decimal sim:/Simulation/processing/MUX_SAIDA_ALU/SAIDA
 add wave -position end -radix decimal sim:/Simulation/processing/MUX_MEM_ADDRESS/address
 add wave -position end -radix decimal sim:/Simulation/processing/MUX_ENTRADA_MEMORIA/SAIDA
+add wave -position end -radix decimal sim:/Simulation/processing/EPCReg
+add wave -position end  sim:/Simulation/processing/MUX_SAIDA_ALU/SELETOR
 
 run 100 ns
 

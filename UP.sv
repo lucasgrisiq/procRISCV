@@ -22,7 +22,7 @@ module UP  (input logic CLK,
     register EPC (.clk(CLK),
                   .reset(RST),
                   .regWrite(WrEPC),
-                  .DadoIn(Alu),
+                  .DadoIn(PC),
                   .DadoOut(EPCReg));
    
     register Areg (.clk(CLK),
@@ -77,9 +77,9 @@ module UP  (input logic CLK,
                                     .Valor_Shift(SAIDA_MUX_SHIFT));
     
     Deslocamento SHIFT_MUX (.Shift(SAIDA_MUX_SHIFT),                    // saida Mux_tipo_shift
-                            .Entrada(A_OUT),	                        //rs1
+                            .Entrada(A_OUT),	                        // rs1
                             .N(INSTR31_0[25:20]), 	                // shamt
-                            .Saida(SAIDA_DESLOCAMENTO));	        //rs2
+                            .Saida(SAIDA_DESLOCAMENTO));	        // rs2
 
     MUX_A_ULA MUX_A_ULA (.SELECT(SELETOR_MUX_A),
                          .A(A_OUT),
@@ -109,6 +109,7 @@ module UP  (input logic CLK,
                                   .ALU_OUT(AluOut),
                                   .ALU(Alu),
                                   .MEM_REG(MEM_REGISTER64),
+                                  .SAIDA_MEMORIA(SAIDA_MEM_64),
                                   .SAIDA(SAIDA_MUX_ALU));   
 
     MUX_MEM_ADDRESS MUX_MEM_ADDRESS (.SELETOR(SELETOR_MUX_MEM_ADDRESS),
