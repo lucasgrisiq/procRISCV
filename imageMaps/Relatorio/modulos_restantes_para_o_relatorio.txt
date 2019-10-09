@@ -17,5 +17,4 @@ bancoReg.sv
 
 UP.sv
 SIGN_EXT.sv
-
 MAQUINA_DE_ESTADOS.sv
