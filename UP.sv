@@ -78,7 +78,7 @@ module UP  (input logic CLK,
     
     Deslocamento SHIFT_MUX (.Shift(SAIDA_MUX_SHIFT),                    // saida Mux_tipo_shift
                             .Entrada(A_OUT),	                        //rs1
-                            .N(INSTR31_0[25:19]), 	                // shamt
+                            .N(INSTR31_0[25:20]), 	                // shamt
                             .Saida(SAIDA_DESLOCAMENTO));	        //rs2
 
     MUX_A_ULA MUX_A_ULA (.SELECT(SELETOR_MUX_A),

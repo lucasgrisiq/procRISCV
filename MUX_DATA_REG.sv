@@ -7,19 +7,19 @@ module MUX_DATA_REG (input logic [63:0] MEM_DATA_REG,
 
     always_comb begin
         if(SELECT == 4'b0000) 
-            SAIDA               = ALU_OUT;
+            SAIDA[63:0]          = ALU_OUT[63:0];
 
         else if(SELECT == 4'b0101)          // ld
-            SAIDA               = MEM_DATA_REG;
+            SAIDA[63:0]         = MEM_DATA_REG[63:0];
         
         else if(SELECT == 4'b0010)
-            SAIDA               = 64'h0001;
+            SAIDA[63:0]          = 64'h0001;
         
         else if(SELECT == 4'b0011) 
-            SAIDA               = 64'h0000;
+            SAIDA[63:0]          = 64'h0000;
 
         else if(SELECT == 4'b0100)
-            SAIDA               = PC;
+            SAIDA[63:0]          = PC;
         else if (SELECT == 4'b0110) begin   // lb
             SAIDA[7:0]          = MEM_DATA_REG[7:0];
             if(MEM_DATA_REG[7] == 1'b1) SAIDA[63:8] = 56'hffffffffffffff;
@@ -48,7 +48,7 @@ module MUX_DATA_REG (input logic [63:0] MEM_DATA_REG,
             SAIDA[63:32]        = 32'h0000000000;
         end
         else if (SELECT == 4'b1100) begin  // Shift
-            SAIDA               = SAIDA_DESLOCAMENTO[63:0];
+            SAIDA[63:0]         = SAIDA_DESLOCAMENTO[63:0];
         end
     end
 

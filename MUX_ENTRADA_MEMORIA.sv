@@ -3,7 +3,7 @@ module MUX_ENTRADA_MEMORIA (input logic [1:0] SELETOR,
                             input logic [63:0] VALOR_MEM, 
                             output logic [63:0] SAIDA);
     always_comb begin
-            if(SELETOR == 2'b00) SAIDA = VALOR_MEM;
+            if(SELETOR == 2'b00) SAIDA[63:0] = B[63:0];
             else if (SELETOR == 2'b01)begin
                 SAIDA[31:0] = B[31:0];
                 SAIDA[63:32] = VALOR_MEM[63:32];
