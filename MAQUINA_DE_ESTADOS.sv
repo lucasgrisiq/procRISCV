@@ -44,7 +44,6 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                     check_tipo,
                     wrt_1_reg,
                     wrt_0_reg,
-                    write_mem_sw,
                     recebe_pc_wrt_pc,
                     read_mem_store,
                     espera_store,
@@ -814,21 +813,6 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 prox_estado         = espera;
             end
 
-            write_mem_sw: begin
-                wrDataMemReg        = 1'b0;
-                SELECT_MUX_DATA     = 4'b0000;
-                WR_BANCO_REG        = 1'b0;
-                wrDataMem           = 1'b1;
-                LOAD_IR             = 1'b0;
-                WR_MEM_INSTR        = 1'b0;
-                reset_wire          = 1'b0;
-                WRITE_PC            = 1'b0;
-                WR_ALU_OUT          = 1'b0;
-                write_reg_A         = 1'b0; 
-                write_reg_B         = 1'b0;
-                SELETOR_ALU         = 2'b01;
-                prox_estado         = espera;
-            end
 
 
         endcase
