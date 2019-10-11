@@ -22,7 +22,7 @@ module UP  (input logic CLK,
     register EPC (.clk(CLK),
                   .reset(RST),
                   .regWrite(WrEPC),
-                  .DadoIn(PC),
+                  .DadoIn(PC-64'd4),
                   .DadoOut(EPCReg));
    
     register Areg (.clk(CLK),

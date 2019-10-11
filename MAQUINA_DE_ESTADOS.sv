@@ -194,7 +194,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
 
             espera_store: begin
                 WR_EPC              = 1'b0;
-                wrDataMemReg        = 1'b0;
+                wrDataMemReg        = 1'b1;
                 wrDataMem           = 1'b0;
                 WR_BANCO_REG        = 1'b0;
                 LOAD_IR             = 1'b0;
@@ -220,7 +220,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
                 reset_wire          = 1'b0;
                 operacao            = 3'b001;
                 SELETOR_MUX_A       = 2'b00;
-                SELETOR_MUX_B       = 3'b011;
+                SELETOR_MUX_B       = 3'b010;
                 WR_ALU_OUT          = 1'b1;
                 write_reg_A         = 1'b1;                 // só é 1 aq
                 write_reg_B         = 1'b1;                 // so é 1 aq
@@ -715,7 +715,7 @@ module MAQUINA_DE_ESTADOS  (input CLK,
             end
 
             read_mem_store: begin                             // ld passo 2
-                wrDataMemReg        = 1'b1;
+                wrDataMemReg        = 1'b0;
                 SELECT_MUX_DATA     = 4'b0000;
                 SELETOR_MUX_MEM_ADDRESS = 2'b00;
                 WR_BANCO_REG        = 1'b0;

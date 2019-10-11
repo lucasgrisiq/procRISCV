@@ -7,10 +7,10 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/lgoq/Documents/procRISCV
+Z0 dC:/Users/jcsf2/Desktop/procRISCV
 vbancoReg
 Z1 DXx6 sv_std 3 std 0 22 ;edk3;YfCLjCm[Hd=`UGQ2
-Z2 !s110 1570652270
+Z2 !s110 1570818579
 !i10b 1
 !s100 a:<nhKC@mWB[nDSoijJPm3
 I`MOnE05dQ1@`[Y_O[A[=11
@@ -18,7 +18,7 @@ Z3 VDg1SIo80bB@j0V0VzS_@n1
 !s105 bancoReg_sv_unit
 S1
 R0
-Z4 w1570644321
+Z4 w1570809121
 8bancoReg.sv
 FbancoReg.sv
 L0 1
@@ -26,7 +26,7 @@ Z5 OV;L;10.6d;65
 r1
 !s85 0
 31
-Z6 !s108 1570652270.000000
+Z6 !s108 1570818578.000000
 Z7 !s107 MUX_TIPO_SHIFT.sv|MUX_MEM_ADDRESS.sv|MUX_ENTRADA_MEMORIA.sv|MUX_WRT_DATA.sv|SIGN_EXT_2.sv|MUX_ALU_ALUOUT.sv|MUX_DATA_REG.sv|bancoReg.sv|Deslocamento.sv|MUX_A_ULA.sv|MUX_B_ULA.sv|SIGN_EXT.sv|ramOnChip64.v|ramOnChip32.v|Memoria32.sv|Memoria64.sv|UP.sv|Simulation.sv|register.sv|Processador.sv|MAQUINA_DE_ESTADOS.sv|
 Z8 !s90 -reportprogress|300|-f|Modulos_SV|
 !i113 1
@@ -69,9 +69,9 @@ VzgO8gWh_:1J3Q7IMD_6361
 !s100 HF;HEc4<o>]o3`Jjc=WPJ2
 Z14 OV;C;10.6d;65
 32
-Z15 !s110 1570652271
+R2
 !i10b 1
-R6
+Z15 !s108 1570818579.000000
 Z16 !s90 -reportprogress|300|-f|Modulos_VHD|
 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
@@ -86,24 +86,24 @@ Vm]9:ocK@DX0U7ei8f63dc3
 !s100 e?bWG@:SnkVC476;`5UQ[1
 R14
 32
-R15
+R2
 !i10b 1
-R6
+R15
 R16
 Z18 !s107 Instr_Reg_Risc_V.vhd|ula64.vhd|
 !i113 1
 R17
 vMAQUINA_DE_ESTADOS
 R1
-R2
+Z19 !s110 1570818578
 !i10b 1
-!s100 `KiP?7mT0S0R5U4`ibT[?3
-IbTzXHTac7Yle6QafLk1EL0
+!s100 YFVD@NocWN@kjD1@N6QQ`2
+I_5HQCKa<7]WnWC6GRdG5E3
 R3
 !s105 MAQUINA_DE_ESTADOS_sv_unit
 S1
 R0
-w1570652256
+w1570818081
 8MAQUINA_DE_ESTADOS.sv
 FMAQUINA_DE_ESTADOS.sv
 L0 1
@@ -119,7 +119,7 @@ R9
 n@m@a@q@u@i@n@a_@d@e_@e@s@t@a@d@o@s
 vMemoria32
 R1
-R2
+R19
 !i10b 1
 !s100 SBjZ6@cgEgTaJzOB`9aUg1
 ICEYMAH>O[?I3ZUI@MMIf<0
@@ -130,7 +130,7 @@ R0
 R4
 8Memoria32.sv
 FMemoria32.sv
-Z19 L0 26
+Z20 L0 26
 R5
 r1
 !s85 0
@@ -143,7 +143,7 @@ R9
 n@memoria32
 vMemoria64
 R1
-R2
+R19
 !i10b 1
 !s100 1fz3Mgbi`W1QjWk]9CgUO3
 I^?H2gZ;TW^1aQMHUQjIJN1
@@ -154,7 +154,7 @@ R0
 R4
 8Memoria64.sv
 FMemoria64.sv
-R19
+R20
 R5
 r1
 !s85 0
@@ -193,13 +193,13 @@ vMUX_ALU_ALUOUT
 R1
 R2
 !i10b 1
-!s100 4N<ZYZg3fNFPHJ8YB>BED0
-I1Mk]jJUW;?<87_VFiYV?02
+!s100 CEPU^OUiBRCc:k?cd^;K41
+I_BL^9L^D56Fa1YaeZKC011
 R3
 !s105 MUX_ALU_ALUOUT_sv_unit
 S1
 R0
-w1570645196
+w1570811927
 8MUX_ALU_ALUOUT.sv
 FMUX_ALU_ALUOUT.sv
 L0 1
@@ -295,7 +295,7 @@ R3
 !s105 MUX_MEM_ADDRESS_sv_unit
 S1
 R0
-w1570645489
+R4
 8MUX_MEM_ADDRESS.sv
 FMUX_MEM_ADDRESS.sv
 L0 1
@@ -358,7 +358,7 @@ R8
 R9
 n@m@u@x_@w@r@t_@d@a@t@a
 vramOnChip32
-R2
+R19
 !i10b 1
 !s100 ?cVfgbFYaCB@4255f4cUf3
 IOOLMj_cg_N:74eHXMeQLm3
@@ -367,7 +367,7 @@ R0
 R4
 8ramOnChip32.v
 FramOnChip32.v
-Z20 L0 40
+Z21 L0 40
 R5
 r1
 !s85 0
@@ -379,7 +379,7 @@ R8
 R9
 nram@on@chip32
 vramOnChip64
-R2
+R19
 !i10b 1
 !s100 cocMaFKEzGMH4F3EWeV]X1
 I5Bnob:67XieXOZhhzR6A22
@@ -388,7 +388,7 @@ R0
 R4
 8ramOnChip64.v
 FramOnChip64.v
-R20
+R21
 R5
 r1
 !s85 0
@@ -401,7 +401,7 @@ R9
 nram@on@chip64
 vregister
 R1
-R2
+R19
 !i10b 1
 !s100 dH7K;MUGFf1fzoV?@SkA[2
 I1o6=cUe?iT;RNP;Q1fAk41
@@ -424,7 +424,7 @@ R8
 R9
 vSIGN_EXT
 R1
-R2
+R19
 !i10b 1
 !s100 RHU^8gJc@z5S_2>g>M46l3
 I`Wi`A[D9UMPB3E2K6H3Fb1
@@ -472,7 +472,7 @@ R9
 n@s@i@g@n_@e@x@t_2
 vSimulation
 R1
-R2
+R19
 !i10b 1
 !s100 @k[6AoUBRAGkeNZKl9@S71
 I9T[B[iE3FCXdf]:TUJ8J03
@@ -496,7 +496,7 @@ R9
 n@simulation
 vState_machine
 R1
-R2
+R19
 !i10b 1
 !s100 BZW?FDYSK7Sc>TKQ:QfW73
 IWa7JK2?G_c^EGooSe;E]K2
@@ -520,27 +520,27 @@ R9
 n@state_machine
 Eula64
 R4
-Z21 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z22 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 R10
 R11
 R0
-Z22 8ula64.vhd
-Z23 Fula64.vhd
+Z23 8ula64.vhd
+Z24 Fula64.vhd
 l0
 L54
 VA[hKfbX3SC@81eT`QAGTa0
 !s100 gXP0QOjWED7GdgGCHP44]0
 R14
 32
-R15
+R2
 !i10b 1
-R6
+R15
 R16
 R18
 !i113 1
 R17
 Abehavioral
-R21
+R22
 R10
 R11
 DEx4 work 5 ula64 0 22 A[hKfbX3SC@81eT`QAGTa0
@@ -550,24 +550,24 @@ VITWg]kaXHNgAHH8EBQEIM3
 !s100 DoJmkJ?1Y9Zk;7@A7oGLb2
 R14
 32
-R15
+R2
 !i10b 1
-R6
+R15
 R16
 R18
 !i113 1
 R17
 vUP
 R1
-R2
+R19
 !i10b 1
-!s100 oX]=8[Wi<a^8e[fG`6N[_1
-I2b8:[gVebSFN_VJ8OH`cM1
+!s100 ZLZ?TWgG5l?RTzkM_^7=N1
+Ij_g]6RhU8JmnbB2:aGX4l2
 R3
 !s105 UP_sv_unit
 S1
 R0
-w1570647477
+w1570818544
 8UP.sv
 FUP.sv
 L0 1
