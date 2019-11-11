@@ -1,8 +1,9 @@
 
 # procRISCV
+Project assinged by *Infraestrutura de Hardware* discipline on cin-UFPE. 
 RISCV multicycle architecture implemented in System Verilog language.
 
-
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/arct.png)
 
 ## Instructions and Memory
 
@@ -27,6 +28,12 @@ After that, run *montador_dados.py*
 To start the simulation you should open the project on the Quartus Software and run the script `do Script`
 
 ## Instruction Set
-
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet1.png)
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet2.png)
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet3.png)
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet4.png)
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet5.png)
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet6.png)
+![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet7.png)
 
  
