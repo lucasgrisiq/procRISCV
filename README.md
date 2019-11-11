@@ -26,7 +26,7 @@ Write on the *dados.txt* file, **position in bytes** followed by **data**:
 After that, run *montador_dados.py*
 
 ## Run
-To start the simulation you should open the project on the Quartus Software and run the script `do Script`
+To start the simulation you should open the project on the ModelSim Software and run the script `do Script`
 
 ## Instruction Set
 ![alt text](https://raw.githubusercontent.com/lucasgrisiq/procRISCV/master/imageMaps/spec/instSet1.png)
