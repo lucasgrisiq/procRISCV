@@ -7,7 +7,7 @@ RISCV multicycle architecture implemented in System Verilog language.
 
 ## Instructions and Memory
 
-Instructions
+- Instructions
 
 To make the set of instructions write on *instructions.txt* with the right spacing, for example:
 
@@ -17,7 +17,7 @@ To make the set of instructions write on *instructions.txt* with the right spaci
     break
 And then run the *montador.exe*
 
-Memory
+- Memory
 
 Write on the *dados.txt* file, **position in bytes** followed by **data**:
 
