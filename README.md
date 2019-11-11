@@ -18,6 +18,7 @@ To make the set of instructions write on *instructions.txt* with the right spaci
 And then run the *montador.exe*
 
 Memory
+
 Write on the *dados.txt* file, **position in bytes** followed by **data**:
 
     1 4
